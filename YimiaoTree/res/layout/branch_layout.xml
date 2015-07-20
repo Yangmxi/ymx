@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/branch_layout"
+    android:layout_width="@dimen/dimen_branch_width"
+    android:layout_height="@dimen/dimen_branch_height"
+    android:background="@color/grey" >
+
+    <com.statt.widget.TreeGallery
+        android:id="@+id/branch_photo_frame"
+        android:layout_width="@dimen/dimen_tree_gallery_width"
+        android:layout_height="@dimen/dimen_tree_gallery_height"
+        android:layout_marginLeft="100px"
+        android:layout_marginTop="150px" 
+        />
+
+</RelativeLayout>

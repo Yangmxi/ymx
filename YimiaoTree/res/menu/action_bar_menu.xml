@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_copy"
+        android:icon="@android:drawable/ic_menu_add"
+        android:showAsAction="always|withText"
+        android:title="添加"/>
+    <item
+        android:id="@+id/action_cut"
+        android:icon="@android:drawable/ic_menu_crop"
+        android:showAsAction="always|withText"
+        android:title="剪切"/>
+    <item
+        android:id="@+id/action_discard"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:showAsAction="always|withText"
+        android:title="删除"/>
+    <item
+        android:id="@+id/action_edit"
+        android:icon="@android:drawable/ic_menu_compass"
+        android:showAsAction="always|withText"
+        android:title="指南"/>
+    <item
+        android:id="@+id/action_email"
+        android:icon="@android:drawable/ic_menu_upload"
+        android:showAsAction="always|withText"
+        android:title="邮箱"/>
+
+</menu>

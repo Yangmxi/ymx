@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="font_size_is_must">14px</dimen>
+    <dimen name="font_size_is_free">14px</dimen>
+    <dimen name="font_size_next_vac_time">30px</dimen>
+    <dimen name="font_size_next_vac_name">30px</dimen>
+    <dimen name="font_size_next_vac_tips">18px</dimen>
+    <dimen name="font_size_tips_appointment">26px</dimen>
+
+    <!-- Tree Gallery -->
+    <dimen name="font_size_tree_gallery_title">12px</dimen>
+    <dimen name="font_size_tree_gallery_time">12px</dimen>
+
+</resources>

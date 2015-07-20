@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:roundImage="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical" >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:background="@color/transparent"
+        android:drawableEnd="@drawable/action_bar_triangle"
+        android:gravity="center"
+        android:text="@string/baby"
+        android:textColor="@color/black" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_vac_book_height"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/action_bar_vac_book_selector"
+        android:gravity="center"
+        android:text="@string/vac_book"
+        android:textColor="@drawable/action_bar_vac_book_text_color"
+        android:textSize="@dimen/font_size_vac_book" />
+
+    <com.statt.widget.RoundImageView
+        android:id="@+id/child_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/icon_child_kimi" />
+
+</RelativeLayout>
