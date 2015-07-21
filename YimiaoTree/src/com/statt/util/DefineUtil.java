@@ -18,4 +18,12 @@ public class DefineUtil {
     // the state of tree is mature
     private static final int STATE_MATURE = 2;
 
+    // floor used the small branch : branch_left_right_small.xml
+    public static final int TYPE_BRANCH_SMALL = 0;
+
+    // floor used the larger branch : branch_left_right_larger.xml
+    public static final int TYPE_BRANCH_LARGER = 2;
+
+    public static final int FLOOR_ID_BASE = 0x7fa00000;
+
 }

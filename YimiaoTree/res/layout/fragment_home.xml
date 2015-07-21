@@ -24,48 +24,11 @@
                 android:layout_height="@dimen/dimen_tree_top"
                 android:background="@color/red" />
 
-            <LinearLayout
+            <com.statt.widget.VacTree
                 android:id="@+id/layout_tree_trunk"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
-
-                <com.statt.widget.TreeGallery
-                    android:id="@+id/tree_trunk_1"
-                    android:layout_width="@dimen/dimen_tree_gallery_width"
-                    android:layout_height="@dimen/dimen_tree_gallery_height"
-                    android:layout_gravity="center" />
-
-                <ImageView
-                    android:id="@+id/tree_trunk_2"
-                    android:layout_width="fill_parent"
-                    android:layout_height="300px"
-                    android:background="@drawable/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/tree_trunk_3"
-                    android:layout_width="fill_parent"
-                    android:layout_height="300px"
-                    android:background="@drawable/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/tree_trunk_4"
-                    android:layout_width="fill_parent"
-                    android:layout_height="300px"
-                    android:background="@drawable/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/tree_trunk_5"
-                    android:layout_width="fill_parent"
-                    android:layout_height="300px"
-                    android:background="@drawable/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/tree_trunk_6"
-                    android:layout_width="fill_parent"
-                    android:layout_height="300px"
-                    android:background="@drawable/ic_launcher" />
-            </LinearLayout>
+                android:layout_height="wrap_content" >
+            </com.statt.widget.VacTree>
 
             <ImageView
                 android:id="@+id/tree_root"
@@ -158,5 +121,11 @@
             android:text="@string/appointment"
             android:textSize="@dimen/font_size_tips_appointment" />
     </RelativeLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/home_menu_arc" />
 
 </RelativeLayout>

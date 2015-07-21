@@ -1,6 +1,7 @@
 
 package com.statt.fragment;
 
+import com.statt.widget.VacTree;
 import com.statt.yimiaotree.R;
 
 import android.app.Fragment;
@@ -11,6 +12,8 @@ import android.view.ViewGroup;
 
 public class FragmentHome extends Fragment {
 
+    private VacTree mVacTree;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -20,5 +23,11 @@ public class FragmentHome extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        mVacTree = (VacTree) getView().findViewById(R.id.layout_tree_trunk);
+    }
+
+    public void addFloor() {
+        mVacTree.addBranch();
     }
 }
+

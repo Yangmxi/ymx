@@ -33,6 +33,7 @@ public class FragmentPersonal extends Fragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         btn = (Button) getView().findViewById(R.id.btn_test);
         btn.setOnClickListener(new View.OnClickListener() {
 
@@ -46,6 +47,6 @@ public class FragmentPersonal extends Fragment {
                 }
             }
         });
-        super.onActivityCreated(savedInstanceState);
+
     }
 }

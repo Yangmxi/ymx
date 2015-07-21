@@ -3,14 +3,11 @@
     android:id="@+id/branch_layout"
     android:layout_width="@dimen/dimen_branch_width"
     android:layout_height="@dimen/dimen_branch_height"
-    android:background="@color/grey" >
+    android:background="@color/transparent" >
 
     <com.statt.widget.TreeGallery
         android:id="@+id/branch_photo_frame"
         android:layout_width="@dimen/dimen_tree_gallery_width"
-        android:layout_height="@dimen/dimen_tree_gallery_height"
-        android:layout_marginLeft="100px"
-        android:layout_marginTop="150px" 
-        />
+        android:layout_height="@dimen/dimen_tree_gallery_height" />
 
 </RelativeLayout>

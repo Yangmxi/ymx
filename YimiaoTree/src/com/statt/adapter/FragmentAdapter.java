@@ -3,6 +3,7 @@ package com.statt.adapter;
 
 import java.util.List;
 
+import com.statt.fragment.FragmentHome;
 import com.statt.yimiaotree.R;
 
 import android.app.Activity;
@@ -53,6 +54,9 @@ public class FragmentAdapter implements RadioGroup.OnCheckedChangeListener {
         if (checkedId == R.id.btn_add_branch) {
             // TOTAGen click add branch show a dialog
             Log.e(TAG, "****** this is add branch btn ********");
+            FragmentHome fh = (FragmentHome) mFragments.get(mCurrentFragIndex);
+            fh.addFloor();
+            radioGroup.clearCheck();
             return;
         }
         for (int i = 0; i < mRgs.getChildCount(); i++) {
