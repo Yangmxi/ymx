@@ -1,7 +1,9 @@
 
 package com.statt.fragment;
 
+import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,12 +12,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.statt.actionbardemo.R;
+import com.statt.activity.BobyManagerActivity;
+import com.statt.yimiaotree.R;
 
 public class FragmentPersonal extends Fragment {
-    private TextView tv;
     private Button btn;
-    private boolean clicked = false;
+    private Activity mActivity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -24,21 +26,23 @@ public class FragmentPersonal extends Fragment {
     }
 
     @Override
+    public void onAttach(Activity activity) {
+        mActivity = activity;
+        super.onAttach(activity);
+    }
+
+    @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        tv = (TextView) getView().findViewById(R.id.tv_test);
         btn = (Button) getView().findViewById(R.id.btn_test);
         btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                if (clicked) {
-                    tv.setText("Not Click!");
-                    tv.setTextColor(Color.RED);
-                    clicked = false;
-                } else {
-                    tv.setText("Click The Button");
-                    tv.setTextColor(Color.BLUE);
-                    clicked = true;
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), BobyManagerActivity.class);
+                startActivity(intent);
+                if (mActivity != null) {
+                    //mActivity.overridePendingTransition(R.anim.slide_left_in, R.anim.slide_left_out);
                 }
             }
         });

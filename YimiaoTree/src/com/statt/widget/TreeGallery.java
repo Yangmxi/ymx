@@ -3,7 +3,7 @@ package com.statt.widget;
 
 import java.util.ArrayList;
 
-import com.statt.actionbardemo.R;
+import com.statt.yimiaotree.R;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

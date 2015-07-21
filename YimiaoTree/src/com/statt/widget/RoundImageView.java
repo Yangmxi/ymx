@@ -16,7 +16,7 @@ import android.graphics.drawable.NinePatchDrawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.statt.actionbardemo.R;
+import com.statt.yimiaotree.R;
 
 /**
  * 圆形ImageView，可设置最多两个宽度不同且颜色不同的圆形边框。

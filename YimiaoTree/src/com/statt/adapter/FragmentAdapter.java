@@ -3,7 +3,7 @@ package com.statt.adapter;
 
 import java.util.List;
 
-import com.statt.actionbardemo.R;
+import com.statt.yimiaotree.R;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -13,6 +13,7 @@ import android.widget.RadioGroup;
 
 public class FragmentAdapter implements RadioGroup.OnCheckedChangeListener {
 
+    private static final String TAG = "FragmentAdapter";
     private List<Fragment> mFragments;
     private RadioGroup mRgs;
     private Activity mFragActivity;
@@ -50,8 +51,8 @@ public class FragmentAdapter implements RadioGroup.OnCheckedChangeListener {
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
         if (checkedId == R.id.btn_add_branch) {
-            // TODO when click add branch show a dialog
-            Log.e("ymx", "****** this is add branch btn ********");
+            // TOTAGen click add branch show a dialog
+            Log.e(TAG, "****** this is add branch btn ********");
             return;
         }
         for (int i = 0; i < mRgs.getChildCount(); i++) {

@@ -1,7 +1,7 @@
 
 package com.statt.fragment;
 
-import com.statt.actionbardemo.R;
+import com.statt.yimiaotree.R;
 
 import android.app.Fragment;
 import android.os.Bundle;

@@ -10,35 +10,11 @@
         android:layout_height="0dp"
         android:layout_weight="1.0"
         android:background="#77557799" />
-    <!--
-    <fragment
-        android:id="@+id/fragment_home"
-        android:name="com.statt.fragment.FragmentHome"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="10" />
 
-    <fragment
-        android:id="@+id/fragment_appointment"
-        android:name="com.statt.fragment.FragmentAppointment"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="10" />
-
-    <fragment
-        android:id="@+id/fragment_discovery"
-        android:name="com.statt.fragment.FragmentDiscovery"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="10" />
-
-    <fragment
-        android:id="@+id/fragment_personal"
-        android:name="com.statt.fragment.FragmentPersonal"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="10" />
-    -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/home_menu_arc" />
 
     <include layout="@layout/home_main_menu" />
 

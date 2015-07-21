@@ -5,7 +5,7 @@
     <dimen name="dimen_vac_book_height">50px</dimen>
 
     <!-- main menu -->
-    <dimen name="dimen_main_menu_height">120px</dimen>
+    <dimen name="dimen_main_menu_height">100px</dimen>
     <dimen name="dimen_next_vac_width">120px</dimen>
 
     <!-- tree -->
@@ -18,10 +18,6 @@
     <dimen name="dimen_tips_tv_next_vac">90px</dimen>
     <dimen name="dimen_tips_appointment_width">100px</dimen>
     <dimen name="dimen_tips_appointment_height">100px</dimen>
-
-    <!-- menu -->
-    <dimen name="dimen_add_branch_width">96px</dimen>
-    <dimen name="dimen_add_branch_height">96px</dimen>
 
     <!-- home layout margin -->
     <dimen name="margin_left_tip_appointment">60px</dimen>

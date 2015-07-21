@@ -1,5 +1,5 @@
 
-package com.statt.actionbardemo;
+package com.statt.activity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,7 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.widget.RadioGroup;
 
+import com.statt.yimiaotree.R;
 import com.statt.adapter.FragmentAdapter;
 import com.statt.adapter.FragmentAdapter.OnMenuChangedListener;
 import com.statt.fragment.FragmentAppointment;

@@ -12,4 +12,7 @@
     <dimen name="font_size_tree_gallery_title">12px</dimen>
     <dimen name="font_size_tree_gallery_time">12px</dimen>
 
+    <!-- Home Menu -->
+    <dimen name="font_size_menu_text">14px</dimen>
+
 </resources>
