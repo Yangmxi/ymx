@@ -20,9 +20,10 @@
 
             <ImageView
                 android:id="@+id/tree_top"
-                android:layout_width="fill_parent"
-                android:layout_height="@dimen/dimen_tree_top"
-                android:background="@color/red" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_left_tree_top"
+                android:background="@drawable/tree_top" />
 
             <com.statt.widget.VacTree
                 android:id="@+id/layout_tree_trunk"
@@ -32,9 +33,10 @@
 
             <ImageView
                 android:id="@+id/tree_root"
-                android:layout_width="fill_parent"
-                android:layout_height="@dimen/dimen_tree_root"
-                android:background="@color/blue" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/tree_root" />
         </LinearLayout>
     </ScrollView>
 

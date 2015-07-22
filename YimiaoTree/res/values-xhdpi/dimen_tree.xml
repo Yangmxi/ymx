@@ -9,8 +9,21 @@
     <dimen name="dimen_name_width">70px</dimen>
     <dimen name="dimen_create_time_width">68px</dimen>
 
+    <!-- Larger Branch Gallery Margin -->
+    <dimen name="margin_start_larger_left_branch">72px</dimen>
+    <dimen name="margin_top_larger_left_branch">174px</dimen>
+    <dimen name="margin_start_larger_right_branch">20px</dimen>
+    <dimen name="margin_top_larger_right_branch">214px</dimen>
+
+    <!-- Small Branch Gallery Margin -->
+    <dimen name="margin_start_small_left_branch">104px</dimen>
+    <dimen name="margin_top_small_left_branch">202px</dimen>
+    <dimen name="margin_start_small_right_branch">36px</dimen>
+    <dimen name="margin_top_small_right_branch">168px</dimen>
+
     <!-- Branch -->
-    <dimen name="dimen_branch_width">500px</dimen>
-    <dimen name="dimen_branch_height">400px</dimen>
+    <dimen name="dimen_branch_width">276px</dimen>
+    <dimen name="dimen_branch_height">398px</dimen>
+    <dimen name="margin_left_tree_top">94px</dimen>
 
 </resources>

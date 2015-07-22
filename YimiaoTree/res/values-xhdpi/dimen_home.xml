@@ -9,9 +9,7 @@
     <dimen name="dimen_next_vac_width">120px</dimen>
 
     <!-- tree -->
-    <dimen name="dimen_tree_top">20px</dimen>
-    <dimen name="dimen_tree_trunk">80px</dimen>
-    <dimen name="dimen_tree_root">20px</dimen>
+    <dimen name="dimen_tree_trunk">398px</dimen>
 
     <!-- home tips -->
     <dimen name="dimen_tips_height">100px</dimen>

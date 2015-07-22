@@ -7,7 +7,7 @@
     <ImageView
         android:id="@+id/trunk"
         android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
+        android:layout_height="@dimen/dimen_tree_trunk"
         android:layout_centerInParent="true"
         android:background="@drawable/tree_trunk" />
 
@@ -16,8 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_toStartOf="@+id/trunk"
-        android:background="@drawable/branch_left_small" />
+        android:layout_toStartOf="@+id/trunk" />
 
     <com.statt.widget.Branch
         android:id="@+id/branch_right"
@@ -25,7 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_toEndOf="@+id/trunk"
-        android:background="@drawable/branch_right_small"
-        android:visibility="gone" />
+        android:visibility="invisible" />
 
 </RelativeLayout>
