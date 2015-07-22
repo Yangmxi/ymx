@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Common Colors -->
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="blue">#0000ff</color>
+    <color name="green">#00ff00</color>
+    <color name="red">#ff0000</color>
+    <color name="grey">#a0a0a0</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- ActionBar Colors -->
+    <color name="action_bar_vac_book">#8AC390</color>
+    <color name="next_vac_tips">#8AC390</color>
+    <color name="home_menu_background">#8AC390</color>
+
+</resources>

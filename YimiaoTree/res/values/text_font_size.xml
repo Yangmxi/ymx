@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="font_size_vac_book">8sp</dimen>
+    <dimen name="font_size_is_must">10sp</dimen>
+    <dimen name="font_size_is_free">10sp</dimen>
+    <dimen name="font_size_next_vac_time">14sp</dimen>
+    <dimen name="font_size_next_vac_name">14sp</dimen>
+
+</resources>

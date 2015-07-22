@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Tree gallery -->
+    <dimen name="dimen_photo_frame_thick">12px</dimen>
+    <dimen name="dimen_tree_gallery_width">154px</dimen>
+    <dimen name="dimen_tree_gallery_height">176px</dimen>
+    <dimen name="dimen_cover_pictures_height">130px</dimen>
+    <dimen name="dimen_name_width">70px</dimen>
+    <dimen name="dimen_create_time_width">68px</dimen>
+
+    <!-- Branch -->
+    <dimen name="dimen_branch_width">500px</dimen>
+    <dimen name="dimen_branch_height">400px</dimen>
+
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_main_menu"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/dimen_main_menu_height"
+    android:background="@color/home_menu_background"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@+id/menu_radio_group"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/btn_vac_tree"
+            style="@style/menu_btn_style"
+            android:drawableTop="@drawable/menu_tree_selector"
+            android:text="@string/vac_tree" />
+
+        <RadioButton
+            android:id="@+id/btn_appointment"
+            style="@style/menu_btn_style"
+            android:drawableTop="@drawable/menu_appointment_selector"
+            android:text="@string/appointment" />
+
+        <RadioButton
+            android:id="@+id/btn_add_branch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_add_branch_selector"
+            android:button="@null" />
+
+        <RadioButton
+            android:id="@+id/btn_discovery"
+            style="@style/menu_btn_style"
+            android:drawableTop="@drawable/menu_discovery_selector"
+            android:text="@string/discovery" />
+
+        <RadioButton
+            android:id="@+id/btn_personal_center"
+            style="@style/menu_btn_style"
+            android:drawableTop="@drawable/menu_personal_center_selector"
+            android:text="@string/personal_center" />
+    </RadioGroup>
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ActionBarDemo</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- ActionBar -->
+    <string-array name="children">
+        <item>小宝</item>
+        <item>欣欣</item>
+        <item>kimi</item>
+    </string-array>
+    
+    <!-- Home  -->
+    <string name="baby">宝宝</string>
+    <string name="vac_book">疫苗本</string>
+    <string name="vac_tree">成长树</string>
+    <string name="appointment">预约</string>
+    <string name="discovery">发现</string>
+    <string name="personal_center">我的</string>
+    <string name="next_vac">下次接种</string>
+    <string name="must">必打</string>
+    <string name="free">免费</string>
+    <string name="symbol_rmb">￥</string>
+    <string name="next_vac_time">2015年10月28日</string>
+    <string name="next_vac_name">流脑疫苗</string>
+
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tree_gallery_layout"
+    android:layout_width="@dimen/dimen_tree_gallery_width"
+    android:layout_height="@dimen/dimen_tree_gallery_height"
+    android:background="@drawable/photo_frame_white"
+    android:padding="@dimen/dimen_photo_frame_thick" >
+
+    <ImageView
+        android:id="@+id/cover_pictures"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dimen_cover_pictures_height"
+        android:src="@drawable/icon_child_kimi" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="@dimen/dimen_name_width"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/next_vac_name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_tree_gallery_title" />
+
+    <TextView
+        android:id="@+id/create_time"
+        android:layout_width="@dimen/dimen_create_time_width"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="2015.07.16"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_tree_gallery_time" />
+
+</RelativeLayout>
