@@ -51,40 +51,42 @@ public class FragmentAdapter implements RadioGroup.OnCheckedChangeListener {
 
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
-        if (checkedId == R.id.btn_add_branch) {
+        if (checkedId == R.id.btn_add_branch && mCurrentFragIndex == 0) {
             // TOTAGen click add branch show a dialog
             Log.e(TAG, "****** this is add branch btn ********");
+
             FragmentHome fh = (FragmentHome) mFragments.get(mCurrentFragIndex);
+
             fh.addFloor();
             radioGroup.clearCheck();
             return;
-        }
-        for (int i = 0; i < mRgs.getChildCount(); i++) {
-            if (mRgs.getChildAt(i).getId() == checkedId) {
-                Fragment fragment = mFragments.get(i);
-                FragmentTransaction ft = obtainFragmentTransaction(i);
+        } else {
+            for (int i = 0; i < mRgs.getChildCount(); i++) {
+                if (mRgs.getChildAt(i).getId() == checkedId) {
+                    Fragment fragment = mFragments.get(i);
+                    FragmentTransaction ft = obtainFragmentTransaction(i);
 
-                // pause the current fragment
-                getCurrentFragment().onPause();
+                    // pause the current fragment
+                    getCurrentFragment().onPause();
 
-                if (fragment.isAdded()) {
-                    // if added before onResume()
-                    fragment.onResume();
-                } else {
-                    ft.add(mFragContentId, fragment);
+                    if (fragment.isAdded()) {
+                        // if added before onResume()
+                        fragment.onResume();
+                    } else {
+                        ft.add(mFragContentId, fragment);
+                    }
+                    // show the target fragment
+                    showFragment(i);
+                    ft.commit();
+
+                    // callback
+                    if (null != mOnChangedListener) {
+                        mOnChangedListener.OnMenuChanged(radioGroup, checkedId, i);
+                    }
+
                 }
-                // show the target fragment
-                showFragment(i);
-                ft.commit();
-
-                // callback
-                if (null != mOnChangedListener) {
-                    mOnChangedListener.OnMenuChanged(radioGroup, checkedId, i);
-                }
-
             }
         }
-
     }
 
     /**
@@ -97,6 +99,10 @@ public class FragmentAdapter implements RadioGroup.OnCheckedChangeListener {
      *          4 - Personal Center fragment
      */
     private void showFragment(int idx) {
+        if (idx == 2) {
+            idx = 0;
+            mRgs.clearCheck();
+        }
         for (int i = 0; i < mFragments.size(); i++) {
             Fragment fragment = mFragments.get(i);
             FragmentTransaction ft = obtainFragmentTransaction(idx);

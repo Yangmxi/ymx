@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="font_size_is_must">14px</dimen>
-    <dimen name="font_size_is_free">14px</dimen>
-    <dimen name="font_size_next_vac_time">30px</dimen>
-    <dimen name="font_size_next_vac_name">30px</dimen>
-    <dimen name="font_size_next_vac_tips">18px</dimen>
-    <dimen name="font_size_tips_appointment">26px</dimen>
+    <!-- Home ActionBar -->
+    <dimen name="font_size_boby_name">40px</dimen>
+    <dimen name="font_size_vac_book">20px</dimen>
+    <!-- Home Tips -->
+    <dimen name="font_size_tips_tag">16px</dimen>
+    <dimen name="font_size_next_vac_time">34px</dimen>
+    <dimen name="font_size_next_vac_name">34px</dimen>
+    <dimen name="font_size_next_vac_tips">20px</dimen>
+    <dimen name="font_size_tips_appointment">27px</dimen>
 
     <!-- Tree Gallery -->
     <dimen name="font_size_tree_gallery_title">12px</dimen>

@@ -2,7 +2,7 @@
 <resources>
 
     <!-- ActionBar -->
-    <dimen name="dimen_vac_book_height">50px</dimen>
+    <dimen name="dimen_vac_book_height">54px</dimen>
 
     <!-- main menu -->
     <dimen name="dimen_main_menu_height">100px</dimen>
@@ -14,11 +14,11 @@
     <!-- home tips -->
     <dimen name="dimen_tips_height">100px</dimen>
     <dimen name="dimen_tips_tv_next_vac">90px</dimen>
-    <dimen name="dimen_tips_appointment_width">100px</dimen>
-    <dimen name="dimen_tips_appointment_height">100px</dimen>
+    <dimen name="dimen_tips_appointment_width">110px</dimen>
+    <dimen name="dimen_tips_appointment_height">110px</dimen>
 
     <!-- home layout margin -->
-    <dimen name="margin_left_tip_appointment">60px</dimen>
+    <dimen name="margin_left_tip_appointment">80px</dimen>
     <dimen name="margin_top_menu_icon">20px</dimen>
     <dimen name="margin_top_add_branch">15px</dimen>
 

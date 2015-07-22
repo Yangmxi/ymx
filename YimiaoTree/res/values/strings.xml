@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ActionBarDemo</string>
+    <string name="app_name">YimiaoApp</string>
     <string name="hello_world">Hello world!</string>
 
     <!-- ActionBar -->
@@ -10,8 +10,8 @@
         <item>欣欣</item>
         <item>kimi</item>
     </string-array>
-    
-    <!-- Home  -->
+
+    <!-- Home -->
     <string name="baby">宝宝</string>
     <string name="vac_book">疫苗本</string>
     <string name="vac_tree">成长树</string>

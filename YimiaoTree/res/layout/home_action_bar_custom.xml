@@ -14,7 +14,8 @@
         android:drawableEnd="@drawable/action_bar_triangle"
         android:gravity="center"
         android:text="@string/baby"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_boby_name" />
 
     <Button
         android:layout_width="wrap_content"

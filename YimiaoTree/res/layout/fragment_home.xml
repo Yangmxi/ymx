@@ -60,6 +60,7 @@
                 android:layout_width="@dimen/dimen_next_vac_width"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
                 android:text="@string/next_vac"
                 android:textColor="@color/next_vac_tips"
                 android:textSize="@dimen/font_size_next_vac_tips" />
@@ -73,7 +74,7 @@
                 android:gravity="center"
                 android:text="@string/must"
                 android:textColor="@color/white"
-                android:textSize="@dimen/font_size_is_must" />
+                android:textSize="@dimen/font_size_tips_tag" />
 
             <TextView
                 android:id="@+id/tv_is_free"
@@ -85,7 +86,7 @@
                 android:gravity="center"
                 android:text="@string/free"
                 android:textColor="@color/white"
-                android:textSize="@dimen/font_size_is_free" />
+                android:textSize="@dimen/font_size_tips_tag" />
         </RelativeLayout>
 
         <RelativeLayout
