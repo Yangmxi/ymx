@@ -12,6 +12,12 @@ import android.app.FragmentTransaction;
 import android.util.Log;
 import android.widget.RadioGroup;
 
+/**
+ * FragmentAdapter is designed for 4 fragments in mainActivity.
+ * And the 4 fragments is likely a RadioGroup, only one fragment can choose.
+ * @author ymx
+ *
+ */
 public class FragmentAdapter implements RadioGroup.OnCheckedChangeListener {
 
     private static final String TAG = "FragmentAdapter";

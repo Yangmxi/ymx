@@ -4,6 +4,7 @@
     <!-- the theme applied to the application or activity -->
     <style name="CustomActivityTheme" parent="@android:style/Theme.Holo">
         <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogStyle</item>
     </style>
 
     <!-- style for the action bar title text -->
@@ -20,6 +21,12 @@
         <item name="android:titleTextStyle">@style/ActionBarTitleTextStyle</item>
         <item name="android:subtitleTextStyle">@style/ActionBarSubTitleTextStyle</item>
         <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <style name="AlertDialogStyle" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:textColor">@color/vac_text_color</item>
     </style>
 
 </resources>

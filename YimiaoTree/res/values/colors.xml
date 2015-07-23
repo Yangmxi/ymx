@@ -12,6 +12,7 @@
 
     <!-- ActionBar Colors -->
     <color name="action_bar_vac_book">#8AC390</color>
+    <color name="vac_text_color">#80c269</color>
     <color name="next_vac_tips">#8AC390</color>
     <color name="home_menu_background">#8AC390</color>
 
