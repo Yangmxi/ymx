@@ -1,20 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center" >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
 
-    <TextView
-        android:id="@+id/tv_test"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Personal Center" />
+        android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/btn_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_test"
-        android:text="Change" />
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dimen_parent_layout_height" >
 
-</RelativeLayout>
+            <com.statt.widget.RoundImageView
+                android:id="@+id/parent_avatar"
+                android:layout_width="@dimen/dimen_parent_avater"
+                android:layout_height="@dimen/dimen_parent_avater"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_left_person_icon"
+                android:src="@drawable/icon_parent_avatar" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_left_parent_info"
+                android:layout_toEndOf="@+id/parent_avatar"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/parent_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="186****7654"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_parent_phone" />
+
+                <TextView
+                    android:id="@+id/parent_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="欣欣爸爸"
+                    android:textColor="@color/vac_text_color"
+                    android:textSize="@dimen/font_size_parent_name" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <include layout="@layout/personal_center_divider" />
+
+        <LinearLayout
+            android:id="@+id/personal_info_baby"
+            style="@style/personal_info_layout" >
+
+            <ImageView
+                style="@style/personal_icon_style"
+                android:src="@drawable/icon_baby" />
+
+            <TextView
+                style="@style/personal_info_style"
+                android:text="@string/info_baby" />
+        </LinearLayout>
+
+        <View style="@style/personal_divider_small" />
+
+        <LinearLayout
+            android:id="@+id/personal_info_appointment"
+            style="@style/personal_info_layout" >
+
+            <ImageView
+                style="@style/personal_icon_style"
+                android:src="@drawable/icon_alarm_clock" />
+
+            <TextView
+                style="@style/personal_info_style"
+                android:text="@string/info_appointment" />
+        </LinearLayout>
+
+        <View style="@style/personal_divider_small" />
+
+        <LinearLayout
+            android:id="@+id/personal_info_message"
+            style="@style/personal_info_layout" >
+
+            <ImageView
+                style="@style/personal_icon_style"
+                android:src="@drawable/icon_message" />
+
+            <TextView
+                style="@style/personal_info_style"
+                android:text="@string/info_message" />
+
+            <TextView
+                android:layout_width="@dimen/dimen_red_circle_size"
+                android:layout_height="@dimen/dimen_red_circle_size"
+                android:background="@drawable/red_circle"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_red_circle" />
+        </LinearLayout>
+
+        <View style="@style/personal_divider_small" />
+
+        <LinearLayout
+            android:id="@+id/personal_info_alert"
+            style="@style/personal_info_layout" >
+
+            <ImageView
+                style="@style/personal_icon_style"
+                android:src="@drawable/icon_alert" />
+
+            <TextView
+                style="@style/personal_info_style"
+                android:text="@string/info_alert" />
+        </LinearLayout>
+
+        <include layout="@layout/personal_center_divider" />
+
+        <LinearLayout
+            android:id="@+id/personal_info_setting"
+            style="@style/personal_info_layout" >
+
+            <ImageView
+                style="@style/personal_icon_style"
+                android:src="@drawable/icon_setting" />
+
+            <TextView
+                style="@style/personal_info_style"
+                android:text="@string/info_setting" />
+        </LinearLayout>
+
+        <View style="@style/personal_divider_small" />
+
+        <LinearLayout
+            android:id="@+id/personal_info_feedback"
+            style="@style/personal_info_layout" >
+
+            <ImageView
+                style="@style/personal_icon_style"
+                android:src="@drawable/icon_feedback" />
+
+            <TextView
+                style="@style/personal_info_style"
+                android:text="@string/info_feedback" />
+        </LinearLayout>
+
+        <View style="@style/personal_divider_small" />
+
+        <LinearLayout
+            android:id="@+id/personal_info_about"
+            style="@style/personal_info_layout" >
+
+            <ImageView
+                style="@style/personal_icon_style"
+                android:src="@drawable/icon_about" />
+
+            <TextView
+                style="@style/personal_info_style"
+                android:text="@string/info_about" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

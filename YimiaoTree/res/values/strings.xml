@@ -30,5 +30,14 @@
         <item>相册</item>
         <item>拍照</item>
     </string-array>
+    
+    <!-- Personal Center -->
+    <string name="info_baby">我的宝宝</string>
+    <string name="info_appointment">我的预约</string>
+    <string name="info_message">我的消息</string>
+    <string name="info_alert">我的提醒</string>
+    <string name="info_setting">设置</string>
+    <string name="info_feedback">用户反馈</string>
+    <string name="info_about">关于</string>
 
 </resources>

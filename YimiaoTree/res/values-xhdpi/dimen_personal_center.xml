@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Personal Center -->
+    <dimen name="dimen_parent_avater">100px</dimen>
+    <dimen name="dimen_parent_layout_height">130px</dimen>
+    <dimen name="dimen_parent_divider_larger">12px</dimen>
+    <dimen name="dimen_parent_divider_small">1px</dimen>
+    <dimen name="dimen_info_layout_height">110px</dimen>
+    <dimen name="dimen_red_circle_size">24px</dimen>
+    <!-- Margin Dimen -->
+    <dimen name="margin_left_person_icon">30px</dimen>
+    <dimen name="margin_left_parent_info">26px</dimen>
+
+</resources>

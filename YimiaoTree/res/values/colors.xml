@@ -16,4 +16,11 @@
     <color name="next_vac_tips">#8AC390</color>
     <color name="home_menu_background">#8AC390</color>
 
+    <!-- Personal Center -->
+    <color name="divider_larger">#eeeeee</color>
+    <color name="divider_larger_edge">#e5e5e5</color>
+    <color name="divider_small">#f6f6f6</color>
+    <color name="info_pressed">#f9f9f9</color>
+    <color name="info_reset">#ffffff</color>
+
 </resources>

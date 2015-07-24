@@ -18,4 +18,10 @@
     <!-- Home Menu -->
     <dimen name="font_size_menu_text">14px</dimen>
 
+    <!-- Personal Center -->
+    <dimen name="font_size_parent_phone">24px</dimen>
+    <dimen name="font_size_parent_name">18px</dimen>
+    <dimen name="font_size_info">28px</dimen>
+    <dimen name="font_size_red_circle">18px</dimen>
+
 </resources>
