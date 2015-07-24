@@ -8,8 +8,10 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.statt.activity.MainActivity;
 import com.statt.yimiaotree.R;
 
 public class Branch extends FrameLayout {
@@ -20,6 +22,7 @@ public class Branch extends FrameLayout {
     private RelativeLayout mBranch;
     private TreeGallery mTreeGallery;
     private int mBranchTheme;
+    private OnClickListener listener;
 
     public Branch(Context context) {
         this(context, null);
@@ -34,14 +37,17 @@ public class Branch extends FrameLayout {
         init(context);
     }
 
-    private void init(Context context) {
+    private void init(final Context context) {
         LayoutInflater inflate = LayoutInflater.from(context);
         mBranch = (RelativeLayout) inflate.inflate(R.layout.branch_layout, null);
         mTreeGallery = (TreeGallery) mBranch.findViewById(R.id.branch_photo_frame);
+        if (listener != null) {
+            mTreeGallery.setOnClickListener(listener);
+        }
         addView(mBranch);
     }
 
-    public View getTreeGallery() {
+    public TreeGallery getTreeGallery() {
         return mTreeGallery;
     }
 
@@ -52,4 +58,7 @@ public class Branch extends FrameLayout {
         mTreeGallery.setLayoutParams(lp);
     }
 
+    public void setTreeGalleryOnClickListener(OnClickListener l) {
+        listener = l;
+    }
 }

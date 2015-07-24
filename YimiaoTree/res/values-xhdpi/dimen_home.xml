@@ -21,5 +21,6 @@
     <dimen name="margin_left_tip_appointment">80px</dimen>
     <dimen name="margin_top_menu_icon">20px</dimen>
     <dimen name="margin_top_add_branch">15px</dimen>
+    <dimen name="margin_top_tips_layout">186px</dimen>
 
 </resources>

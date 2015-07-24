@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -22,6 +23,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -41,10 +43,14 @@ public class MainActivity extends Activity implements OnClickListener {
 
     private static final String TAG = "MainActivity";
     private static final String IMAGE_FILE_LOCATION = "file:///sdcard/temp.jpg";
+    private static final int CHOOSE_PIC_AVATAR = 0;
+    private static final int TAKE_PIC_AVATAR = 1;
     private RadioGroup mMenuGroup;
     private List<Fragment> fragments;
     private RoundImageView mBabyAvatar;
     private Button mVacBook, mBabyManager;
+
+    private ImageView mCurrentClick;
 
     //to store the big bitmap
     private Uri imageUri;
@@ -114,7 +120,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 showVacBookInfo();
                 break;
             case R.id.baby_avatar:
-                showChoosePhoto();
+                showChoosePhoto(MainActivity.this, mBabyAvatar);
                 break;
             default:
                 Log.w(TAG, "this is unidentifiable ID!");
@@ -141,9 +147,20 @@ public class MainActivity extends Activity implements OnClickListener {
                 case PhotoCropper.CROP_SMALL_PICTURE:
                     if (imageUri != null) {
                         Bitmap bitmap = mPhotoCropper.decodeUriAsBitmap(imageUri);
-                        mBabyAvatar.setImageBitmap(bitmap);
+                        mCurrentClick.setImageBitmap(bitmap);
                     } else {
                         Log.e(TAG, "CROP_SMALL_PICTURE: data = " + data);
+                    }
+                    break;
+                case PhotoCropper.CHOOSE_SMALL_PICTURE:
+                    if (data != null) {
+                        // Bitmap bitmap = data.getParcelableExtra("data");
+                        // this is different method get image
+                        Uri imageUri = data.getData();
+                        Bitmap bitmap = mPhotoCropper.decodeUriAsBitmap(imageUri);
+                        mCurrentClick.setImageBitmap(bitmap);
+                    } else {
+                        Log.e(TAG, "CHOOSE_SMALL_PICTURE: data = " + data);
                     }
                     break;
                 default:
@@ -173,13 +190,14 @@ public class MainActivity extends Activity implements OnClickListener {
 
     }
 
-    private void showChoosePhoto() {
-        final String[] choose = getResources().getStringArray(R.array.choose_photo);
+    public void showChoosePhoto(Activity context, ImageView CurrentClick) {
+        mCurrentClick = CurrentClick;
+        final String[] choose = context.getResources().getStringArray(R.array.choose_photo);
 
-        View content = LayoutInflater.from(this).inflate(R.layout.dialog_layout, null);
+        View content = LayoutInflater.from(context).inflate(R.layout.dialog_layout, null);
         ListView list = (ListView) content.findViewById(R.id.dialog_list);
-        list.setAdapter(new ArrayAdapter<String>(this, R.layout.item_single_text, choose));
-        final Dialog alertDialog = new AlertDialog.Builder(this)
+        list.setAdapter(new ArrayAdapter<String>(context, R.layout.item_single_text, choose));
+        final Dialog alertDialog = new AlertDialog.Builder(context)
                 .setView(content)
                 .create();
         alertDialog.show();
@@ -187,13 +205,14 @@ public class MainActivity extends Activity implements OnClickListener {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                alertDialog.dismiss();
+                Intent intent;
                 switch (position) {
-                    case 0:
-                        Toast.makeText(getApplicationContext(), "Choose 0", Toast.LENGTH_SHORT).show();
+                    case CHOOSE_PIC_AVATAR:
+                        mPhotoCropper.takeSmallPhoto();
                         break;
-                    case 1:
-                        alertDialog.dismiss();
-                        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);//action is capture
+                    case TAKE_PIC_AVATAR:
+                        intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);//action is capture
                         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
                         startActivityForResult(intent, PhotoCropper.TAKE_SMALL_PICTURE);
                         break;

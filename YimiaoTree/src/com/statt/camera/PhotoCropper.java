@@ -22,6 +22,7 @@ public class PhotoCropper {
     public static final int TAKE_SMALL_PICTURE = 2;
     public static final int CROP_BIG_PICTURE = 3;
     public static final int CROP_SMALL_PICTURE = 4;
+    public static final int CHOOSE_SMALL_PICTURE = 5;
     private Activity mActivity;
 
     public PhotoCropper(Activity activity) {
@@ -69,4 +70,21 @@ public class PhotoCropper {
         return bitmap;
     }
 
+    /**
+     * Choose a small Photo to setting the baby avatar
+     */
+    public void takeSmallPhoto() {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+        intent.setType("image/*");
+        intent.putExtra("crop", "true");
+        intent.putExtra("aspectX", 2);
+        intent.putExtra("aspectY", 1);
+        intent.putExtra("outputX", 200);
+        intent.putExtra("outputY", 100);
+        intent.putExtra("scale", true);
+        intent.putExtra("return-data", true);
+        intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
+        intent.putExtra("noFaceDetection", true); // no face detection
+        mActivity.startActivityForResult(intent, PhotoCropper.CHOOSE_SMALL_PICTURE);
+    }
 }

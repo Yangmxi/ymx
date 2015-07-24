@@ -25,7 +25,7 @@ public class VacTree extends RelativeLayout {
      * @author ymx
      *
      */
-    interface OnGrowListener {
+    public interface OnGrowListener {
         /**
          * Notification that the vaccine tree has grown.
          * If the Branches were odd number turn into even number
@@ -36,7 +36,7 @@ public class VacTree extends RelativeLayout {
         /**
          * Notification that the vaccine tree add new branch.
          */
-        void onAddBranch();
+        void onAddBranch(Floor lastFloor);
     }
 
     public VacTree(Context context) {
@@ -80,7 +80,7 @@ public class VacTree extends RelativeLayout {
             mIsEven = true;
         }
         if (mGrowListener != null) {
-            mGrowListener.onAddBranch();
+            mGrowListener.onAddBranch(getLastFloor());
         }
     }
 

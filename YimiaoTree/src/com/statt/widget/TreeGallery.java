@@ -50,6 +50,10 @@ public class TreeGallery extends FrameLayout {
         addView(mTreeGallery);
     }
 
+    public ImageView getCoverPic() {
+        return mCoverPic;
+    }
+
     /**
      * Set the cover picture of tree gallery.
      * @param draw
