@@ -26,4 +26,8 @@ public class DefineUtil {
 
     public static final int FLOOR_ID_BASE = 0x7fa00000;
 
+    public static final String KEY_LAYOUT_ID = "LayoutID";
+
+    public static final String KEY_ACTION_BAR_TITLE = "ActionBarTitle";
+
 }

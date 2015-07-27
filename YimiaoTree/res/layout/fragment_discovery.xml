@@ -1,12 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center" >
+    android:background="@color/white" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/ad_image"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Discovery" />
+        android:background="@drawable/ad_image_01" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ad_image"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/baby_bbs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@color/transparent"
+            android:drawableTop="@drawable/icon_bbs_baby"
+            android:text="@string/bbs_baby"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/vac_knowledge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@color/transparent"
+            android:drawableTop="@drawable/icon_vac_konwledge"
+            android:text="@string/vac_knowledge"
+            android:textColor="@color/black" />
+    </LinearLayout>
 
 </RelativeLayout>

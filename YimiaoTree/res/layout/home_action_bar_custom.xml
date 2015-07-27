@@ -27,7 +27,7 @@
         android:background="@drawable/action_bar_vac_book_selector"
         android:gravity="center"
         android:text="@string/vac_book"
-        android:textColor="@drawable/action_bar_vac_book_text_color"
+        android:textColor="@drawable/text_color_selector"
         android:textSize="@dimen/font_size_vac_book" />
 
     <com.statt.widget.RoundImageView

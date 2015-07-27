@@ -9,17 +9,12 @@
         android:id="@+id/ad_image"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/appoint_doing" />
+        android:background="@drawable/bbs_list_up" />
 
-    <Button
-        android:id="@+id/appoint_detail"
+    <ImageButton
+        android:id="@+id/detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/appoint_current" />
-
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/appoint_done" />
+        android:background="@drawable/bbs_list_mid" />
 
 </LinearLayout>

@@ -30,7 +30,7 @@
         <item>相册</item>
         <item>拍照</item>
     </string-array>
-    
+
     <!-- Personal Center -->
     <string name="info_baby">我的宝宝</string>
     <string name="info_appointment">我的预约</string>
@@ -39,5 +39,18 @@
     <string name="info_setting">设置</string>
     <string name="info_feedback">用户反馈</string>
     <string name="info_about">关于</string>
+    <string name="info_parent">家长信息</string>
+
+    <!-- Appointment -->
+    <string name="appoint_info_title">预约接种</string>
+    <string name="appoint_confirm_title">预约详情</string>
+
+    <!-- Discovery - BBS & Vaccine Konwledge -->
+    <string name="bbs_baby">宝宝论坛</string>
+    <string name="vac_knowledge">疫苗知识库</string>
+    <string name="bbs">论坛</string>
+    <string name="publish_post">发帖</string>
+    <string name="detail">详情</string>
+    <string name="vac_detail">疫苗详情</string>
 
 </resources>
