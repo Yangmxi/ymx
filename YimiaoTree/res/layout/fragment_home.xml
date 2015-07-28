@@ -53,7 +53,8 @@
             android:id="@+id/layout_info"
             android:layout_width="@dimen/dimen_next_vac_width"
             android:layout_height="@dimen/dimen_tips_tv_next_vac"
-            android:layout_centerVertical="true" >
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_right_text" >
 
             <TextView
                 android:id="@+id/tv_next_vac"
@@ -101,7 +102,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/next_vac_time"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_next_vac_name" />
 
             <TextView
                 android:id="@+id/tv_vac_name"

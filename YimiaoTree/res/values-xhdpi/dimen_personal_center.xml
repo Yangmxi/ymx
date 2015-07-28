@@ -12,4 +12,8 @@
     <dimen name="margin_left_person_icon">30px</dimen>
     <dimen name="margin_left_parent_info">26px</dimen>
 
+    <!-- Appointment -->
+    <dimen name="margin_top_appoint">350dp</dimen>
+    <dimen name="dimen_confirm_cancle_height">80px</dimen>
+
 </resources>

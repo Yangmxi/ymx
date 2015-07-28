@@ -24,6 +24,7 @@
         android:layout_height="@dimen/dimen_vac_book_height"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/margin_left_right_action_bar_btn"
         android:background="@drawable/action_bar_vac_book_selector"
         android:gravity="center"
         android:text="@string/vac_book"
@@ -36,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/margin_left_right_action_bar_btn"
         android:src="@drawable/icon_child_kimi" />
 
 </RelativeLayout>

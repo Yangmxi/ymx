@@ -22,8 +22,6 @@
     <dimen name="margin_top_small_right_branch">168px</dimen>
 
     <!-- Branch -->
-    <dimen name="dimen_branch_width">276px</dimen>
-    <dimen name="dimen_branch_height">398px</dimen>
     <dimen name="margin_left_tree_top">94px</dimen>
 
 </resources>

@@ -42,6 +42,12 @@ public class FragmentPersonal extends Fragment implements OnClickListener {
         setOnClick();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        initActionBar();
+    }
+
     private void setOnClick() {
         mBabyManager.setOnClickListener(this);
         mParentInfo.setOnClickListener(this);

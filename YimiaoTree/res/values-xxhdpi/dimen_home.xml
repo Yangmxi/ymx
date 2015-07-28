@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ActionBar -->
+    <dimen name="dimen_vac_book_height">80px</dimen>
+    <dimen name="dimen_back_width">100px</dimen>
+    <dimen name="dimen_back_height">70px</dimen>
+    <dimen name="dimen_baby_avatar_width">108px</dimen>
+    <dimen name="dimen_baby_avatar_height">108px</dimen>
+    <dimen name="margin_left_right_action_bar_btn">45px</dimen>
+    <dimen name="padding_back">10px</dimen>
+
+    <!-- main menu -->
+    <dimen name="dimen_main_menu_height">168px</dimen>
+    <dimen name="dimen_next_vac_width">156px</dimen>
+
+    <!-- tree -->
+    <dimen name="dimen_tree_trunk">598px</dimen>
+
+    <!-- home tips -->
+    <dimen name="dimen_tips_height">140px</dimen>
+    <dimen name="dimen_tips_tv_next_vac">130px</dimen>
+    <dimen name="dimen_tips_appointment_width">168px</dimen>
+    <dimen name="dimen_tips_appointment_height">168px</dimen>
+
+    <!-- home layout margin -->
+    <dimen name="margin_left_tip_appointment">100px</dimen>
+    <dimen name="margin_top_menu_icon">20px</dimen>
+    <dimen name="margin_top_add_branch">15px</dimen>
+    <dimen name="margin_top_tips_layout">282px</dimen>
+    <dimen name="margin_right_text">20px</dimen>
+
+</resources>

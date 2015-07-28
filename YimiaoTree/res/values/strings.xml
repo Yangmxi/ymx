@@ -25,6 +25,7 @@
     <string name="next_vac_time">2015年10月28日</string>
     <string name="next_vac_name">流脑疫苗</string>
     <string name="add_baby">添加宝宝</string>
+    <string name="scan_gallery">浏览相册</string>
 
     <string-array name="choose_photo">
         <item>相册</item>

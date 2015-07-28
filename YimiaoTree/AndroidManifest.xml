@@ -63,6 +63,10 @@
             android:name="com.statt.activity.discovery.PublishActivit"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.statt.activity.home.ScanGalleryActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

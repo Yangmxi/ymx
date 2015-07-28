@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Home ActionBar -->
+    <dimen name="font_size_boby_name">60px</dimen>
+    <dimen name="font_size_vac_book">30px</dimen>
+    <!-- Home Tips -->
+    <dimen name="font_size_tips_tag">20px</dimen>
+    <dimen name="font_size_next_vac_time">50px</dimen>
+    <dimen name="font_size_next_vac_name">50px</dimen>
+    <dimen name="font_size_next_vac_tips">12sp</dimen>
+    <dimen name="font_size_tips_appointment">50px</dimen>
+
+    <!-- Tree Gallery -->
+    <dimen name="font_size_tree_gallery_title">18px</dimen>
+    <dimen name="font_size_tree_gallery_time">18px</dimen>
+
+    <!-- Home Menu -->
+    <dimen name="font_size_menu_text">36px</dimen>
+
+    <!-- Personal Center -->
+    <dimen name="font_size_parent_phone">36px</dimen>
+    <dimen name="font_size_parent_name">27px</dimen>
+    <dimen name="font_size_info">42px</dimen>
+    <dimen name="font_size_red_circle">27px</dimen>
+
+</resources>

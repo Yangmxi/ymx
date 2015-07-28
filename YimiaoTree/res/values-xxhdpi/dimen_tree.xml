@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Tree gallery -->
+    <dimen name="dimen_photo_frame_thick">18px</dimen>
+    <dimen name="dimen_tree_gallery_width">232px</dimen>
+    <dimen name="dimen_tree_gallery_height">264px</dimen>
+    <dimen name="dimen_cover_pictures_height">196px</dimen>
+    <dimen name="dimen_name_width">106px</dimen>
+    <dimen name="dimen_create_time_width">102px</dimen>
+
+    <!-- Larger Branch Gallery Margin -->
+    <dimen name="margin_start_larger_left_branch">110px</dimen>
+    <dimen name="margin_top_larger_left_branch">260px</dimen>
+    <dimen name="margin_start_larger_right_branch">26px</dimen>
+    <dimen name="margin_top_larger_right_branch">318px</dimen>
+
+    <!-- Small Branch Gallery Margin -->
+    <dimen name="margin_start_small_left_branch">160px</dimen>
+    <dimen name="margin_top_small_left_branch">302px</dimen>
+    <dimen name="margin_start_small_right_branch">52px</dimen>
+    <dimen name="margin_top_small_right_branch">252px</dimen>
+
+    <!-- Branch -->
+    <dimen name="margin_left_tree_top">66px</dimen>
+
+</resources>

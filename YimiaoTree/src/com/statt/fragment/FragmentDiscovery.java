@@ -3,6 +3,7 @@ package com.statt.fragment;
 
 import com.statt.activity.discovery.BBSActivity;
 import com.statt.activity.discovery.VacKnowledgeActivity;
+import com.statt.util.ActionBarUtil;
 import com.statt.yimiaotree.R;
 
 import android.app.Fragment;
@@ -28,7 +29,19 @@ public class FragmentDiscovery extends Fragment implements OnClickListener {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initView();
+        initActionBar();
         setOnClick();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initActionBar();
+    }
+
+    private void initActionBar() {
+        ActionBarUtil ab = new ActionBarUtil();
+        ab.initActionBar(getActivity(), R.string.discovery, View.GONE);
     }
 
     private void setOnClick() {

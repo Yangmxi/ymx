@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Personal Center -->
+    <dimen name="dimen_parent_avater">100px</dimen>
+    <dimen name="dimen_parent_layout_height">196px</dimen>
+    <dimen name="dimen_parent_divider_larger">18px</dimen>
+    <dimen name="dimen_parent_divider_small">2px</dimen>
+    <dimen name="dimen_info_layout_height">166px</dimen>
+    <dimen name="dimen_red_circle_size">36px</dimen>
+    <!-- Margin Dimen -->
+    <dimen name="margin_left_person_icon">46px</dimen>
+    <dimen name="margin_left_parent_info">40px</dimen>
+
+    <!-- Appointment -->
+    <dimen name="margin_top_appoint">400dp</dimen>
+    <dimen name="dimen_confirm_cancle_height">120px</dimen>
+
+</resources>
