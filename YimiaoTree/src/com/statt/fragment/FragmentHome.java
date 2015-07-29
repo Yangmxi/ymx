@@ -72,21 +72,17 @@ public class FragmentHome extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        initActionBar();
-        if (mBabyAvatarDrawable != null) {
-            mBabyAvatar.setImageDrawable(mBabyAvatarDrawable);
-        }
-
-        initView();
-        setListener();
+//        initActionBar();
+//        initView();
+//        setListener();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        if (mBabyAvatar == null) {
-            mBabyAvatarDrawable = mBabyAvatar.getDrawable();
-        }
+        /* if (mBabyAvatar != null) {
+             mBabyAvatarDrawable = mBabyAvatar.getDrawable();
+         }*/
     }
 
     private void setListener() {

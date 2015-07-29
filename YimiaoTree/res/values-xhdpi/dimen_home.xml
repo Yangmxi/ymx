@@ -5,8 +5,8 @@
     <dimen name="dimen_vac_book_height">54px</dimen>
     <dimen name="dimen_back_width">70px</dimen>
     <dimen name="dimen_back_height">54px</dimen>
-    <dimen name="dimen_baby_avatar_width">100px</dimen>
-    <dimen name="dimen_baby_avatar_height">100px</dimen>
+    <dimen name="dimen_baby_avatar_width">87px</dimen>
+    <dimen name="dimen_baby_avatar_height">87px</dimen>
     <dimen name="margin_left_right_action_bar_btn">30px</dimen>
     <dimen name="padding_back">10px</dimen>
 

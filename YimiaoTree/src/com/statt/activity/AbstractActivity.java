@@ -54,7 +54,7 @@ public class AbstractActivity extends Activity {
             switch (requestCode) {
                 case PhotoCropper.TAKE_SMALL_PICTURE:
                     Log.i(TAG, "TAKE_SMALL_PICTURE: data = " + data);
-                    mPhotoCropper.cropImageUri(imageUri, 260, 200, PhotoCropper.CROP_SMALL_PICTURE);
+                    mPhotoCropper.cropImageUri(imageUri, 200, 200, PhotoCropper.CROP_SMALL_PICTURE);
                     break;
                 case PhotoCropper.CROP_SMALL_PICTURE:
                     if (imageUri != null) {

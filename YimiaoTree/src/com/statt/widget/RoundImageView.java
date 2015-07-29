@@ -67,10 +67,10 @@ public class RoundImageView extends ImageView {
         Bitmap b = ((BitmapDrawable) drawable).getBitmap();
         Bitmap bitmap = b.copy(Bitmap.Config.ARGB_8888, true);
         if (defaultWidth == 0) {
-            defaultWidth = getWidth();
+            defaultWidth = getMeasuredWidth();
         }
         if (defaultHeight == 0) {
-            defaultHeight = getHeight();
+            defaultHeight = getMeasuredHeight();
         }
         int radius = 0;
         if (mBorderInsideColor != defaultColor && mBorderOutsideColor != defaultColor) {
