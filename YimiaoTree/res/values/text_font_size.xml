@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Parent Info -->
+    <dimen name="font_size_parent_info">20sp</dimen>
+
+</resources>

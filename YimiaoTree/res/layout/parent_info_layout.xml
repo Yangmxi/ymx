@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dimen_parent_avatar_info" >
+
+        <TextView
+            style="@style/parent_info_text_style"
+            android:text="@string/change_avatar" />
+
+        <com.statt.widget.RoundImageView
+            android:layout_width="@dimen/dimen_parent_avater"
+            android:layout_height="@dimen/dimen_parent_avater"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_end_parent_avatar"
+            android:src="@drawable/icon_parent_avatar" />
+    </RelativeLayout>
+
+    <View style="@style/divider_small" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dimen_parent_avatar_info" >
+
+        <TextView
+            style="@style/parent_info_text_style"
+            android:text="@string/user_name" />
+
+        <EditText
+            style="@style/parent_info_content_style"
+            android:text="欣欣爸爸" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dimen_parent_avatar_info" >
+
+        <TextView
+            style="@style/parent_info_text_style"
+            android:text="@string/user_photo_num" />
+
+        <EditText
+            style="@style/parent_info_content_style"
+            android:text="181****7654" />
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/pure_color_round_btn_selector"
+        android:text="@string/confirm" />
+
+</LinearLayout>

@@ -1,7 +1,6 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:drawable="@drawable/icon_menu_appointment_pressed" android:state_pressed="true"/>
-    <item android:drawable="@drawable/icon_menu_appointment_reset"/>
-    <!-- <item android:drawable="@drawable/skin_common_btn_green_disable" android:state_enabled="false"/> -->
+    <item android:drawable="@drawable/icon_menu_appointment_pressed" android:state_checked="true"/>
+    <item android:drawable="@drawable/icon_menu_appointment_reset" android:state_checked="false"/>
 
 </selector>

@@ -3,6 +3,8 @@
 
     <string name="app_name">YimiaoApp</string>
     <string name="hello_world">Hello world!</string>
+    <string name="confirm">确定</string>
+    <string name="cancle">取消</string>
 
     <!-- ActionBar -->
     <string-array name="children">
@@ -41,6 +43,11 @@
     <string name="info_feedback">用户反馈</string>
     <string name="info_about">关于</string>
     <string name="info_parent">家长信息</string>
+    <string name="change_avatar">修改头像</string>
+    <string name="user_name">用户昵称</string>
+    <string name="user_photo_num">绑定手机</string>
+    <string name="alert_before_vac">接种前提醒</string>
+    <string name="alert_time">提醒时间</string>
 
     <!-- Appointment -->
     <string name="appoint_info_title">预约接种</string>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_item_baby_list_height"
+    android:background="@color/divider_larger"
+    android:padding="5dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/round_corner_bkg" >
+
+        <Button
+            android:id="@+id/delete_baby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_parent_layout_height"
+            android:layout_centerInParent="true" >
+
+            <com.statt.widget.RoundImageView
+                android:id="@+id/baby_avatar"
+                android:layout_width="@dimen/dimen_item_baby_avatar_size"
+                android:layout_height="@dimen/dimen_item_baby_avatar_size"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_child_kimi" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/baby_avatar"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/baby_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="小欣欣"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_size_parent_phone" />
+
+                <TextView
+                    android:id="@+id/baby_old"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3岁"
+                    android:textColor="@color/vac_text_color"
+                    android:textSize="@dimen/font_size_parent_name" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/more_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/arrow_right" />
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Parent Info -->
+    <dimen name="dimen_parent_avatar_info">78dp</dimen>
+    <dimen name="dimen_parent_other_info">54dp</dimen>
+    <dimen name="margin_start_end_parent_info">18dp</dimen>
+    <dimen name="dimen_toggle_btn_width">50dp</dimen>
+    <dimen name="dimen_toggle_btn_height">28dp</dimen>
+    <dimen name="dimen_item_baby_list_height">66dp</dimen>
+    <dimen name="dimen_item_baby_avatar_size">44dp</dimen>
+
+    <!-- Margin -->
+    <dimen name="margin_end_parent_avatar">30dp</dimen>
+
+    <!-- Padding -->
+    <dimen name="padding_baby_item">6dp</dimen>
+
+</resources>

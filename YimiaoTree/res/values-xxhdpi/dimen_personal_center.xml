@@ -2,8 +2,7 @@
 <resources>
 
     <!-- Personal Center -->
-    <dimen name="dimen_parent_avater">100px</dimen>
-    <dimen name="dimen_parent_layout_height">196px</dimen>
+    <dimen name="dimen_parent_avater">196px</dimen>
     <dimen name="dimen_parent_divider_larger">18px</dimen>
     <dimen name="dimen_parent_divider_small">2px</dimen>
     <dimen name="dimen_info_layout_height">166px</dimen>

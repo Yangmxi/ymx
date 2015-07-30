@@ -63,7 +63,7 @@
                 android:text="@string/info_baby" />
         </LinearLayout>
 
-        <View style="@style/personal_divider_small" />
+        <View style="@style/divider_small" />
 
         <LinearLayout
             android:id="@+id/personal_info_appointment"
@@ -78,7 +78,7 @@
                 android:text="@string/info_appointment" />
         </LinearLayout>
 
-        <View style="@style/personal_divider_small" />
+        <View style="@style/divider_small" />
 
         <LinearLayout
             android:id="@+id/personal_info_message"
@@ -102,7 +102,7 @@
                 android:textSize="@dimen/font_size_red_circle" />
         </LinearLayout>
 
-        <View style="@style/personal_divider_small" />
+        <View style="@style/divider_small" />
 
         <LinearLayout
             android:id="@+id/personal_info_alert"
@@ -132,7 +132,7 @@
                 android:text="@string/info_setting" />
         </LinearLayout>
 
-        <View style="@style/personal_divider_small" />
+        <View style="@style/divider_small" />
 
         <LinearLayout
             android:id="@+id/personal_info_feedback"
@@ -147,7 +147,7 @@
                 android:text="@string/info_feedback" />
         </LinearLayout>
 
-        <View style="@style/personal_divider_small" />
+        <View style="@style/divider_small" />
 
         <LinearLayout
             android:id="@+id/personal_info_about"
