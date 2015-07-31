@@ -6,6 +6,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,7 +14,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.statt.activity.personal.AlertActivity;
 import com.statt.activity.personal.BobyManagerActivity;
+import com.statt.activity.personal.MessageActivity;
+import com.statt.activity.personal.ParentInfoActivity;
 import com.statt.util.ActionBarUtil;
 import com.statt.util.DefineUtil;
 import com.statt.yimiaotree.R;
@@ -69,34 +73,28 @@ public class FragmentPersonal extends Fragment implements OnClickListener {
         mAlert = getView().findViewById(R.id.personal_info_alert);
     }
 
-    private void prepareIntent(Intent intent, int id, int title) {
-        intent.putExtra(DefineUtil.KEY_LAYOUT_ID, id);
-        intent.putExtra(DefineUtil.KEY_ACTION_BAR_TITLE, title);
-    }
-
     @Override
     public void onClick(View v) {
         Intent intent = new Intent();
         switch (v.getId()) {
             case R.id.parent_info_layout:
-                prepareIntent(intent, R.drawable.info_parent, R.string.info_parent);
+                intent.setClass(mActivity, ParentInfoActivity.class);
                 break;
             case R.id.personal_info_baby:
-                prepareIntent(intent, R.drawable.info_baby, R.string.info_baby);
+                intent.setClass(mActivity, BobyManagerActivity.class);
                 break;
             case R.id.personal_info_appointment:
                 return;
             case R.id.personal_info_message:
-                prepareIntent(intent, R.drawable.info_message, R.string.info_message);
+                intent.setClass(mActivity, MessageActivity.class);
                 break;
             case R.id.personal_info_alert:
-                prepareIntent(intent, R.drawable.info_alert, R.string.info_alert);
+                intent.setClass(mActivity, AlertActivity.class);
                 break;
             default:
                 break;
         }
         if (mActivity != null) {
-            intent.setClass(mActivity, BobyManagerActivity.class);
             mActivity.startActivity(intent);
             //mActivity.overridePendingTransition(R.anim.slide_left_in, R.anim.slide_left_out);
         }

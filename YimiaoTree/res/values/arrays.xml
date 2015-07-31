@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <string-array name="vac_date">
+        <item>A+C群流脑疫苗</item>
+        <item>ACYW135群流脑疫苗</item>
+        <item>A群流脑疫苗</item>
+        <item>A+C群流脑结合疫苗</item>
+        <item>百日破疫苗(DPT三联)</item>
+        <item>百日破疫苗(DT)</item>
+        <item>百日破Hib四联疫苗</item>
+        <item>出血热疫苗</item>
+        <item>霍乱疫苗</item>
+        <item>Hib结合疫苗</item>
+        <item>甲乙肝联合疫苗</item>
+        <item>甲肝减毒活疫苗</item>
+        <item>甲肝灭活疫苗</item>
+        <item>脊灰灭活疫苗(IPV)</item>
+        <item>口服脊灰减毒疫苗(OPV糖丸)</item>
+        <item>狂犬病疫苗</item>
+        <item>卡介苗(BCG)</item>
+        <item>轮状病毒活疫苗</item>
+        <item>流感疫苗</item>
+        <item>麻疹风疹疫苗</item>
+        <item>麻疹疫苗</item>
+        <item>马腮风疫苗(MMR)</item>
+        <item>伤寒疫苗</item>
+        <item>水痘疫苗</item>
+        <item>鼠疫疫苗</item>
+        <item>炭疽疫苗</item>
+        <item>五联疫苗</item>
+        <item>乙肝疫苗(HepB)</item>
+        <item>乙脑灭活疫苗</item>
+        <item>乙脑减毒活疫苗</item>
+        <item>23价肺炎疫苗</item>
+        <item>7价肺炎结合疫苗</item>
+    </string-array>
+
+</resources>

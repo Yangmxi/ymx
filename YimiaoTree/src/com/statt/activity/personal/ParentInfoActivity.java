@@ -9,18 +9,18 @@ import android.view.View.OnClickListener;
 import com.statt.util.ActionBarUtil;
 import com.statt.yimiaotree.R;
 
-public class BobyManagerActivity extends Activity implements OnClickListener {
+public class ParentInfoActivity extends Activity implements OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.baby_manager_layout);
+        setContentView(R.layout.parent_info_layout);
         initActionBar();
     }
 
     private void initActionBar() {
         ActionBarUtil abUtil = new ActionBarUtil();
-        abUtil.initActionBar(this, R.string.info_baby, View.VISIBLE);
+        abUtil.initActionBar(this, R.string.info_parent, View.VISIBLE);
     }
 
     @Override

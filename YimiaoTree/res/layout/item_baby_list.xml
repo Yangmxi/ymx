@@ -10,12 +10,14 @@
         android:layout_height="match_parent"
         android:background="@drawable/round_corner_bkg" >
 
-        <Button
+        <ImageButton
             android:id="@+id/delete_baby"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/dimen_icon_round_delete_size"
+            android:layout_height="@dimen/dimen_icon_round_delete_size"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="30dp" />
+            android:layout_marginStart="30dp"
+            android:background="@color/transparent"
+            android:src="@drawable/icon_round_delete" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -33,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_toEndOf="@+id/baby_avatar"
                 android:orientation="vertical" >
 

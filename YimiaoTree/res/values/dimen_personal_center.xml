@@ -9,6 +9,7 @@
     <dimen name="dimen_toggle_btn_height">28dp</dimen>
     <dimen name="dimen_item_baby_list_height">66dp</dimen>
     <dimen name="dimen_item_baby_avatar_size">44dp</dimen>
+    <dimen name="dimen_icon_round_delete_size">30dp</dimen>
 
     <!-- Margin -->
     <dimen name="margin_end_parent_avatar">30dp</dimen>

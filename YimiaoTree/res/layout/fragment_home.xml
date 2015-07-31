@@ -124,6 +124,7 @@
             android:layout_toEndOf="@+id/layout_next_vac"
             android:background="@drawable/home_tips_appointment_selector"
             android:text="@string/appointment"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_size_tips_appointment" />
     </RelativeLayout>
 

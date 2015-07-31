@@ -20,20 +20,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
             android:background="@color/transparent"
             android:drawableTop="@drawable/icon_bbs_baby"
             android:text="@string/bbs_baby"
-            android:textColor="@color/black" />
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/vac_knowledge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
             android:background="@color/transparent"
             android:drawableTop="@drawable/icon_vac_konwledge"
             android:text="@string/vac_knowledge"
-            android:textColor="@color/black" />
+            android:textSize="14sp" />
     </LinearLayout>
 
 </RelativeLayout>

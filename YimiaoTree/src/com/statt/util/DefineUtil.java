@@ -30,4 +30,6 @@ public class DefineUtil {
 
     public static final String KEY_ACTION_BAR_TITLE = "ActionBarTitle";
 
+    public static final String KEY_VAC_NAME = "VacName";
+
 }

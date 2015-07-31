@@ -2,7 +2,7 @@
 <resources>
 
     <!-- the theme applied to the application or activity -->
-    <style name="CustomActivityTheme" parent="@android:style/Theme.Holo">
+    <style name="CustomActivityTheme" parent="@android:style/Theme.Holo.Light">
         <item name="android:actionBarStyle">@style/ActionBarStyle</item>
         <item name="android:alertDialogTheme">@style/AlertDialogStyle</item>
     </style>

@@ -22,6 +22,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
+/**
+ * This is AbstractActivity for photo crop
+ */
 public class AbstractActivity extends Activity {
 
     private static final String TAG = "AbstractActivity";
