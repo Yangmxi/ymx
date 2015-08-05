@@ -19,8 +19,8 @@
     <dimen name="font_size_menu_text">36px</dimen>
 
     <!-- Personal Center -->
-    <dimen name="font_size_parent_phone">36px</dimen>
-    <dimen name="font_size_parent_name">27px</dimen>
+    <dimen name="font_size_parent_phone">48px</dimen>
+    <dimen name="font_size_parent_name">36px</dimen>
     <dimen name="font_size_info">42px</dimen>
     <dimen name="font_size_red_circle">27px</dimen>
 

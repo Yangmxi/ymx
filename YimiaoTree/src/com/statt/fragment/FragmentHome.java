@@ -72,17 +72,9 @@ public class FragmentHome extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-//        initActionBar();
-//        initView();
-//        setListener();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        /* if (mBabyAvatar != null) {
-             mBabyAvatarDrawable = mBabyAvatar.getDrawable();
-         }*/
+        initActionBar();
+        initView();
+        setListener();
     }
 
     private void setListener() {
@@ -106,6 +98,8 @@ public class FragmentHome extends Fragment {
         ActionBar ab = getActivity().getActionBar();
         ab.setCustomView(R.layout.custom_action_bar_home);
         ab.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        //TODO If avatar pictrue in cache of sdcard, setting it.
+        //     if not, setting to the default avatar
     }
 
     private OnClickListener choosePhotoListener = new View.OnClickListener() {

@@ -4,4 +4,12 @@
     <!-- Parent Info -->
     <dimen name="font_size_parent_info">20sp</dimen>
 
+    <!-- BBS -->
+    <dimen name="font_size_post_top">8sp</dimen>
+    <dimen name="font_size_post_name">14sp</dimen>
+    <dimen name="font_size_post_place">10sp</dimen>
+    <dimen name="font_size_post_date">9sp</dimen>
+    <dimen name="font_size_post_click_reply">8sp</dimen>
+    <dimen name="font_size_post_title">18sp</dimen>
+
 </resources>

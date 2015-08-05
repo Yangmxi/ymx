@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:minHeight="@dimen/dimen_item_post_top_height"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/tips_tag_bkg"
+        android:gravity="center"
+        android:text="@string/top"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_post_top" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="20dp"
+        android:text="夏季宝宝如何预防蚊虫叮咬" >
+    </TextView>
+
+</LinearLayout>

@@ -13,7 +13,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 /**
- * DialogListViewAdapter can adpater listview which item is Text + RadioButton
+ * DialogListViewAdapter can adapt listview which item is Text + RadioButton
  * It like the android single choice.
  * @author ymx
  *

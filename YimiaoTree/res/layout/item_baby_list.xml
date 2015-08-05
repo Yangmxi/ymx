@@ -21,7 +21,7 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/dimen_parent_layout_height"
+            android:layout_height="@dimen/dimen_parent_avatar_info"
             android:layout_centerInParent="true" >
 
             <com.statt.widget.RoundImageView

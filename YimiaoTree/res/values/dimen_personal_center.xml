@@ -2,6 +2,7 @@
 <resources>
 
     <!-- Parent Info -->
+    <dimen name="dimen_parent_avater">50dp</dimen>
     <dimen name="dimen_parent_avatar_info">78dp</dimen>
     <dimen name="dimen_parent_other_info">54dp</dimen>
     <dimen name="margin_start_end_parent_info">18dp</dimen>

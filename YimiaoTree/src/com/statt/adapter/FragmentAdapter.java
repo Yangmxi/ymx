@@ -58,7 +58,7 @@ public class FragmentAdapter implements RadioGroup.OnCheckedChangeListener {
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
         if (checkedId == R.id.btn_add_branch && mCurrentFragIndex == 0) {
-            // TOTAGen click add branch show a dialog
+            // TODO click add branch show a dialog
             Log.e(TAG, "****** this is add branch btn ********");
 
             FragmentHome fh = (FragmentHome) mFragments.get(mCurrentFragIndex);

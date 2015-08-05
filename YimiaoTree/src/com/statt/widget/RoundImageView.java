@@ -61,17 +61,12 @@ public class RoundImageView extends ImageView {
         if (getWidth() == 0 || getHeight() == 0) {
             return;
         }
-        this.measure(0, 0);
         if (drawable.getClass() == NinePatchDrawable.class)
             return;
         Bitmap b = ((BitmapDrawable) drawable).getBitmap();
         Bitmap bitmap = b.copy(Bitmap.Config.ARGB_8888, true);
-        if (defaultWidth == 0) {
-            defaultWidth = getMeasuredWidth();
-        }
-        if (defaultHeight == 0) {
-            defaultHeight = getMeasuredHeight();
-        }
+        defaultWidth = getMeasuredWidth();
+        defaultHeight = getMeasuredHeight();
         int radius = 0;
         if (mBorderInsideColor != defaultColor && mBorderOutsideColor != defaultColor) {
             // 定义画两个边框，分别为外圆边框和内圆边框

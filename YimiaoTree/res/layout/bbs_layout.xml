@@ -1,19 +1,12 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:background="@color/white" >
 
-    <ImageView
-        android:id="@+id/ad_image"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bbs_list_up" />
-
-    <ImageButton
-        android:id="@+id/detail"
+    <com.statt.widget.XListView
+        android:id="@+id/post_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bbs_list_mid" />
+        android:layout_height="fill_parent" >
+    </com.statt.widget.XListView>
 
-</LinearLayout>
+</FrameLayout>
