@@ -3,7 +3,7 @@ package com.statt.adapter;
 
 import java.util.List;
 
-import com.statt.util.SortModel;
+import com.statt.serializable.SortModel;
 import com.statt.yimiaotree.R;
 
 import android.content.Context;

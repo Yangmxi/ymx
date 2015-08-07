@@ -4,6 +4,7 @@ package com.statt.adapter;
 import com.statt.yimiaotree.R;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,6 +21,7 @@ import android.widget.TextView;
  */
 public class DialogListViewAdapter extends BaseAdapter {
 
+    private static final String TAG = "DialogListViewAdapter";
     private Context mContext;
     private String[] mNameArray;
     private int mSelectIndex;
@@ -79,6 +81,7 @@ public class DialogListViewAdapter extends BaseAdapter {
 
             @Override
             public void onClick(View v) {
+                Log.i(TAG, "Click Item Postion is " + position);
                 mSelectIndex = position;
                 notifyDataSetChanged();
             }

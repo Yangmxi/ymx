@@ -1,15 +1,22 @@
 
-package com.statt.util;
+package com.statt.serializable;
+
+import java.io.Serializable;
 
 import android.widget.ImageView;
 
-public class Baby {
+public class Baby implements Serializable {
 
+    /**
+     * This is Baby information. include name, age, sex, avatar
+     * Date: 2015/08/06
+     */
+    private static final long serialVersionUID = 3513253904283377123L;
     private String mName;
     // day of age.
     private int mAge;
     private boolean mSex;
-    private ImageView mAvatar;
+    private String mAvatar;
 
     public String getName() {
         return mName;
@@ -35,11 +42,11 @@ public class Baby {
         this.mSex = mSex;
     }
 
-    public ImageView getAvatar() {
+    public String getAvatar() {
         return mAvatar;
     }
 
-    public void setAvatar(ImageView mAvatar) {
+    public void setAvatar(String mAvatar) {
         this.mAvatar = mAvatar;
     }
 

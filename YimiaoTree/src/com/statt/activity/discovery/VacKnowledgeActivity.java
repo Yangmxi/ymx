@@ -19,11 +19,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.statt.adapter.SortAdapter;
+import com.statt.serializable.SortModel;
 import com.statt.util.ActionBarUtil;
 import com.statt.util.CharacterParser;
 import com.statt.util.DefineUtil;
 import com.statt.util.PinyinComparator;
-import com.statt.util.SortModel;
 import com.statt.widget.ClearEditText;
 import com.statt.widget.SideBar;
 import com.statt.widget.SideBar.OnTouchingLetterChangedListener;

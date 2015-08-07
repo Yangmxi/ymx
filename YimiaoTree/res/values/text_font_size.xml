@@ -11,5 +11,7 @@
     <dimen name="font_size_post_date">9sp</dimen>
     <dimen name="font_size_post_click_reply">8sp</dimen>
     <dimen name="font_size_post_title">18sp</dimen>
+    <dimen name="font_size_reply_title">22sp</dimen>
+    <dimen name="font_size_reply_btn">12sp</dimen>
 
 </resources>

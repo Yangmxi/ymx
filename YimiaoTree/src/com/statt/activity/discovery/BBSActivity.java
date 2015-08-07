@@ -1,7 +1,6 @@
 
 package com.statt.activity.discovery;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -11,12 +10,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 
 import com.statt.adapter.PostAdapter;
+import com.statt.serializable.Parent;
+import com.statt.serializable.Post;
 import com.statt.util.ActionBarUtil;
-import com.statt.util.Parent;
-import com.statt.util.Post;
+import com.statt.util.DefineUtil;
 import com.statt.widget.XListView;
 import com.statt.widget.XListView.IXListViewListener;
 import com.statt.yimiaotree.R;
@@ -57,6 +58,18 @@ public class BBSActivity extends Activity implements IXListViewListener {
         mListViewPost.setAdapter(mAdapter);
 
         mListViewPost.setXListViewListener(this);
+        mListViewPost.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent();
+                intent.setClass(BBSActivity.this, BbsDetailActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable(DefineUtil.KEY_SELECT_POST, mCurrentDate.get(position - 1));
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -78,16 +91,16 @@ public class BBSActivity extends Activity implements IXListViewListener {
         Post post = null;
         for (int i = 0; i < TOTAL_POSTS; i++) {
             if (i % 4 == 0) {
-                ArrayList<Uri> list = new ArrayList<Uri>();
+                ArrayList<String> list = new ArrayList<String>();
                 if (i == 8) {
-                    list.add(uri[0]);
-                    list.add(uri[1]);
+                    list.add(uri[0].toString());
+                    list.add(uri[1].toString());
                 } else if (i == 12) {
-                    list.add(uri[0]);
-                    list.add(uri[1]);
-                    list.add(uri[0]);
+                    list.add(uri[0].toString());
+                    list.add(uri[1].toString());
+                    list.add(uri[0].toString());
                 } else {
-                    list.add(uri[0]);
+                    list.add(uri[0].toString());
                 }
                 post = new Post(topArray[i], titleArray[i],
                         contentArray[i], parentArray[i], DateArray[i],
@@ -130,7 +143,7 @@ public class BBSActivity extends Activity implements IXListViewListener {
         for (int i = 0; i < TOTAL_POSTS; i++) {
             String name = "家长_" + i;
             String phoneNum = "186****" + (10 + (int) Math.random() * 89);
-            parentArray[i] = new Parent(name, phoneNum, place[(int) (Math.random() * 4)], uri[i % 2]);
+            parentArray[i] = new Parent(name, phoneNum, place[(int) (Math.random() * 4)], uri[i % 2].toString());
         }
     }
 
@@ -162,10 +175,16 @@ public class BBSActivity extends Activity implements IXListViewListener {
 
     private void loadMoreDate(int length) {
         final int currentSize = mCurrentDate.size();
+        int size = 0;
         if (currentSize >= mListDate.size()) {
             return;
         }
-        for (int i = currentSize; i < currentSize + length; i++) {
+        if (currentSize + length > mListDate.size()) {
+            size = mListDate.size();
+        } else {
+            size = currentSize + length;
+        }
+        for (int i = currentSize; i < size; i++) {
             mCurrentDate.add(mListDate.get(i));
         }
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <style name="menu_btn_style">
         <item name="android:layout_width">0dp</item>
@@ -11,6 +11,13 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:background">@color/transparent</item>
         <item name="android:button">@null</item>
+    </style>
+
+    <style name="general_btn_style">
+        <item name="android:textColor">@color/vac_text_color</item>
+        <item name="android:background">@drawable/round_corner_bkg</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
 </resources>

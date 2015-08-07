@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/padding_top_bottom_post"
+    android:paddingEnd="@dimen/padding_left_right_post"
+    android:paddingStart="@dimen/padding_left_right_post"
+    android:paddingTop="@dimen/padding_top_bottom_post" >
+
+    <RelativeLayout
+        android:id="@+id/post_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_parent_avater" >
+
+        <com.statt.widget.RoundImageView
+            android:id="@+id/post_avatar"
+            android:layout_width="@dimen/dimen_parent_avater"
+            android:layout_height="@dimen/dimen_parent_avater"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_parent_avatar" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_left_parent_info"
+            android:layout_toEndOf="@+id/post_avatar"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/post_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="欣欣爸爸"
+                    android:textColor="@color/vac_text_color"
+                    android:textSize="@dimen/font_size_post_name" />
+
+                <TextView
+                    android:id="@+id/post_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="2015.08.03 19:13"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/font_size_post_date" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/post_place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="南京"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/font_size_post_place" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/post_info_layout"
+        android:layout_marginStart="@dimen/margin_left_title"
+        android:layout_toLeftOf="@+id/btn_reply"
+        android:text="这个帖子很有用！"
+        android:textSize="@dimen/font_size_post_title" />
+
+    <Button
+        android:id="@+id/btn_reply"
+        style="@style/general_btn_style"
+        android:layout_width="@dimen/dimen_reply_btn_width"
+        android:layout_height="@dimen/dimen_reply_btn_height"
+        android:layout_alignBottom="@+id/content"
+        android:layout_alignParentEnd="true"
+        android:text="@string/reply"
+        android:textSize="@dimen/font_size_reply_btn" />
+
+</RelativeLayout>

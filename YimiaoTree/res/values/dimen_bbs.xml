@@ -5,6 +5,8 @@
     <dimen name="dimen_item_post_top_height">50dp</dimen>
     <dimen name="dimen_post_image_size">76dp</dimen>
     <dimen name="dimen_post_click_width">26dp</dimen>
+    <dimen name="dimen_reply_btn_width">62dp</dimen>
+    <dimen name="dimen_reply_btn_height">26dp</dimen>
 
     <!-- Padding -->
     <dimen name="padding_left_right_post">15dp</dimen>

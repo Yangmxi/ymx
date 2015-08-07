@@ -1,5 +1,5 @@
 
-package com.statt.util;
+package com.statt.serializable;
 
 public class SortModel {
 

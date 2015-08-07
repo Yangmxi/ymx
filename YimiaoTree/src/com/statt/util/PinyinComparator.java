@@ -3,6 +3,8 @@ package com.statt.util;
 
 import java.util.Comparator;
 
+import com.statt.serializable.SortModel;
+
 /**
  * 
  *

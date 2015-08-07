@@ -14,6 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -120,7 +122,13 @@ public class FragmentHome extends Fragment {
         addBaby.setVisibility(View.VISIBLE);
         final DialogListViewAdapter adapter = new DialogListViewAdapter(c, array, currentName);
         list.setAdapter(adapter);
+        list.setOnItemClickListener(new OnItemClickListener() {
 
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.i(TAG, "Click Item Postion is " + position);
+            }
+        });
         Dialog alertDialog = new AlertDialog.Builder(c)
                 .setView(content)
                 .create();

@@ -32,4 +32,6 @@ public class DefineUtil {
 
     public static final String KEY_VAC_NAME = "VacName";
 
+    public static final String KEY_SELECT_POST = "SelectPost";
+
 }

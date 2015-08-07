@@ -1,12 +1,18 @@
 
-package com.statt.util;
+package com.statt.serializable;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import android.net.Uri;
 
-public class Post {
+public class Post implements Serializable {
 
+    /**
+     * Post for BBS
+     * Date: 2015/08/06
+     */
+    private static final long serialVersionUID = 8495056067273593008L;
     private boolean mIsTop;
     private String mTitle;
     private String mContent;
@@ -14,11 +20,11 @@ public class Post {
     private String mDate;
     private int mClicksCount;
     private int mReplyCount;
-    private ArrayList<Uri> mImagePath;
+    private ArrayList<String> mImagePath;
 
     public Post(boolean mIsTop, String mTitle, String mContent,
             Parent mParent, String mDate, int mClicksCount,
-            int mReplyCount, ArrayList<Uri> mImagePath) {
+            int mReplyCount, ArrayList<String> mImagePath) {
         this.mIsTop = mIsTop;
         this.mTitle = mTitle;
         this.mContent = mContent;
@@ -85,11 +91,11 @@ public class Post {
         this.mParent = mParent;
     }
 
-    public ArrayList<Uri> getImagePath() {
+    public ArrayList<String> getImagePath() {
         return mImagePath;
     }
 
-    public void setImagePath(ArrayList<Uri> mImagePath) {
+    public void setImagePath(ArrayList<String> mImagePath) {
         this.mImagePath = mImagePath;
     }
 

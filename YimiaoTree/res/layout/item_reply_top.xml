@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/padding_top_bottom_post"
+    android:paddingEnd="@dimen/padding_left_right_post"
+    android:paddingStart="@dimen/padding_left_right_post"
+    android:paddingTop="@dimen/padding_top_bottom_post" >
+
+    <RelativeLayout
+        android:id="@+id/post_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_parent_avater" >
+
+        <com.statt.widget.RoundImageView
+            android:id="@+id/post_avatar"
+            android:layout_width="@dimen/dimen_parent_avater"
+            android:layout_height="@dimen/dimen_parent_avater"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_parent_avatar" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_left_parent_info"
+            android:layout_toEndOf="@+id/post_avatar"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/post_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="欣欣爸爸"
+                    android:textColor="@color/vac_text_color"
+                    android:textSize="@dimen/font_size_post_name" />
+
+                <TextView
+                    android:id="@+id/post_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="2015.08.03 19:13"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/font_size_post_date" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/post_place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="南京"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/font_size_post_place" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/post_info_layout"
+        android:layout_marginTop="15dp"
+        android:text="清热解暑宝宝食疗攻略"
+        android:textSize="@dimen/font_size_reply_title" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="20dp"
+        android:text="      俗话说 “药补不如食补”，“是药三分毒”，而且许多宝宝生了病不愿吃药，应用 “食疗” 可以改变这种状况，还可以缓解、调理甚至治好宝宝的病。\n为了宝宝健康，下面为大家介绍一些宝宝常见疾病的食疗方法，包括：小儿便秘、小儿腹泻、小儿咳嗽、小儿感冒等多种常见病。"
+        android:textSize="@dimen/font_size_post_title" />
+
+    <LinearLayout
+        android:id="@+id/post_image_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/title"
+        android:layout_below="@+id/content"
+        android:layout_marginTop="@dimen/margin_top_post_image"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/post_image_1"
+            android:layout_width="@dimen/dimen_post_image_size"
+            android:layout_height="@dimen/dimen_post_image_size"
+            android:background="@drawable/round_corner_bkg"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/post_image_2"
+            android:layout_width="@dimen/dimen_post_image_size"
+            android:layout_height="@dimen/dimen_post_image_size"
+            android:layout_marginStart="@dimen/margin_left_post_image"
+            android:background="@drawable/round_corner_bkg"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/post_image_3"
+            android:layout_width="@dimen/dimen_post_image_size"
+            android:layout_height="@dimen/dimen_post_image_size"
+            android:layout_marginStart="@dimen/margin_left_post_image"
+            android:background="@drawable/round_corner_bkg"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/post_click_reply_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/post_image_layout"
+        android:layout_marginTop="@dimen/margin_top_click_reply"
+        android:background="@color/transparent"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/icon_clicks" />
+
+        <TextView
+            android:id="@+id/post_click"
+            android:layout_width="@dimen/dimen_post_click_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="6dp"
+            android:text="196"
+            android:textColor="@color/vac_text_color"
+            android:textSize="@dimen/font_size_post_click_reply" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/margin_left_reply"
+            android:src="@drawable/icon_reply" />
+
+        <TextView
+            android:id="@+id/post_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="6dp"
+            android:text="28"
+            android:textColor="@color/vac_text_color"
+            android:textSize="@dimen/font_size_post_click_reply" />
+    </LinearLayout>
+
+</RelativeLayout>
