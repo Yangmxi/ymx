@@ -2,9 +2,6 @@
 package com.statt.json;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Map;
 
@@ -13,12 +10,11 @@ import org.json.JSONObject;
 import android.R.integer;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
+import com.statt.util.BitmapUtil;
 import com.statt.util.FormFile;
 import com.statt.util.JsonStrUtil;
 import com.statt.util.LogUtil;
@@ -117,28 +113,10 @@ public class AvatarAsyncTask extends AsyncTask<Void, integer, String> {
     @Override
     protected void onPostExecute(String result) {
         if (mIsDownload) {
-            Bitmap bitmap = getBitmapFromURL(result);
+            Bitmap bitmap = BitmapUtil.getBitmapFromURL(result);
             mAvatar.setImageBitmap(bitmap);
         } else {
             Toast.makeText(mContext, result, Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public static Bitmap getBitmapFromURL(String src) {
-        try {
-            LogUtil.Log(TAG, "URL is" + src);
-            URL url = new URL(src);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setDoInput(true);
-            connection.connect();
-            InputStream input = connection.getInputStream();
-            Bitmap myBitmap = BitmapFactory.decodeStream(input);
-            LogUtil.Log(TAG, "Bitmap from URL returned");
-            return myBitmap;
-        } catch (IOException e) {
-            e.printStackTrace();
-            LogUtil.Log(TAG, e.getMessage());
-            return null;
         }
     }
 

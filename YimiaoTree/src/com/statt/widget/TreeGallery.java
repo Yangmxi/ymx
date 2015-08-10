@@ -3,9 +3,11 @@ package com.statt.widget;
 
 import java.util.ArrayList;
 
+import com.statt.util.BitmapUtil;
 import com.statt.yimiaotree.R;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.util.AttributeSet;
@@ -18,10 +20,10 @@ import android.widget.TextView;
 public class TreeGallery extends FrameLayout {
 
     private int mGalleryTheme;
-    private int mPhotosCount;
     private ArrayList<Uri> mListPhotos;
     private String mCreateTime;
     private String mGalleryName;
+    private int mCoverPicIndex;
 
     private RelativeLayout mTreeGallery;
     private ImageView mCoverPic;
@@ -52,6 +54,20 @@ public class TreeGallery extends FrameLayout {
 
     public ImageView getCoverPic() {
         return mCoverPic;
+    }
+
+    /**
+     * set cover picture from index
+     * @param index the mListPhotos index
+     */
+    public void setCoverPictureFromIndex(int index) {
+        if (mListPhotos != null) {
+            int size = mListPhotos.size();
+            if (index < size) {
+                Uri uri = mListPhotos.get(index);
+                mCoverPic.setImageURI(uri);
+            }
+        }
     }
 
     /**

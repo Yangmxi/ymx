@@ -3,13 +3,12 @@ package com.statt.widget;
 
 import java.util.ArrayList;
 
-import com.statt.util.DefineUtil;
-
 import android.content.Context;
-import android.content.res.Resources;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
+
+import com.statt.util.DefineUtil;
 
 public class VacTree extends RelativeLayout {
 
