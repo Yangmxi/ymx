@@ -10,6 +10,7 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.NinePatchDrawable;
@@ -161,5 +162,32 @@ public class RoundImageView extends ImageView {
         /* 设置paint的外框宽度 */
         paint.setStrokeWidth(mBorderThickness);
         canvas.drawCircle(defaultWidth / 2, defaultHeight / 2, radius, paint);
+    }
+
+    /**
+     * create a round corner Bitmap
+     * @param bitmap the src bitmap
+     * @param roundPx the corner radius
+     * @return a round corner Bitmap
+     */
+    public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, float roundPx) {
+
+        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Config.ARGB_8888);
+        Canvas canvas = new Canvas(output);
+
+        final int color = 0xff424242;
+        final Paint paint = new Paint();
+        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+        final RectF rectF = new RectF(rect);
+
+        paint.setAntiAlias(true);
+        canvas.drawARGB(0, 0, 0, 0);
+        paint.setColor(color);
+        canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
+
+        paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));
+        canvas.drawBitmap(bitmap, rect, rect, paint);
+
+        return output;
     }
 }
