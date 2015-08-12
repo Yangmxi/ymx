@@ -27,11 +27,17 @@ public class PostDetailAdapter extends BaseAdapter {
     private Context mContext;
     private Post mPost;
     private ArrayList<Reply> mListReply;
+    private String mLoginID;
 
-    public PostDetailAdapter(Context context, Post post, ArrayList<Reply> list) {
+    public PostDetailAdapter(Context context, Post post, ArrayList<Reply> list, String loginID) {
         mContext = context;
         mPost = post;
         mListReply = list;
+        mLoginID = loginID;
+    }
+
+    private String getLoginID() {
+        return this.mLoginID;
     }
 
     public void updateListView(ArrayList<Reply> list) {
@@ -80,9 +86,15 @@ public class PostDetailAdapter extends BaseAdapter {
         }
         if (type == TYPE_POST && mPost != null) {
             viewHolder.setDateToItem(mPost, true);
+            if (getLoginID().equals(mPost.getParent().getLoginID())) {
+                viewHolder.delete.setVisibility(View.VISIBLE);
+            }
         } else if (type == TYPE_REPLY) {
             final Reply reply = mListReply.get(position - 1);
             viewHolder.setDateToItem(reply, false);
+            if (getLoginID().equals(reply.getParent().getLoginID())) {
+                viewHolder.delete.setVisibility(View.VISIBLE);
+            }
         }
         return view;
     }
@@ -90,6 +102,7 @@ public class PostDetailAdapter extends BaseAdapter {
     final static class PostDetailViewHolder extends PostViewHolder {
         TextView content;
         Button btnReply;
+        TextView delete;
 
         @Override
         public void setDateToItem(Post post, boolean isPostDetail) {
@@ -109,6 +122,7 @@ public class PostDetailAdapter extends BaseAdapter {
         @Override
         public void initViews(View view, boolean isTop) {
             super.initViews(view, isTop);
+            delete = (TextView) view.findViewById(R.id.post_delete);
             content = (TextView) view.findViewById(R.id.content);
             btnReply = (Button) view.findViewById(R.id.btn_reply);
         }

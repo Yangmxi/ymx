@@ -10,16 +10,30 @@ public class Parent implements Serializable {
      * Date: 2015/08/06
      */
     private static final long serialVersionUID = -4721650620446356901L;
+    private String mLoginID;
     private String mName;
     private String mPhoneNum;
     private String mPlace;
     private String mAvatar;
 
     public Parent(String name, String phoneNum, String place, String avatar) {
-        this.mName = name;
+        this(name, place, avatar);
         this.mPhoneNum = phoneNum;
+
+    }
+
+    public Parent(String name, String place, String avatar) {
+        this.mName = name;
         this.mPlace = place;
         this.mAvatar = avatar;
+    }
+
+    public void setLoginID(String id) {
+        this.mLoginID = id;
+    }
+
+    public String getLoginID() {
+        return this.mLoginID;
     }
 
     public String getName() {

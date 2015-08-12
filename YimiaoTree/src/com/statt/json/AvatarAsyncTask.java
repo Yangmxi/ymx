@@ -14,7 +14,7 @@ import android.os.AsyncTask;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
-import com.statt.util.BitmapUtil;
+import com.statt.util.BitmapTask;
 import com.statt.util.FormFile;
 import com.statt.util.JsonStrUtil;
 import com.statt.util.LogUtil;
@@ -39,6 +39,7 @@ public class AvatarAsyncTask extends AsyncTask<Void, integer, String> {
     private String mAddress;
     private Context mContext;
     private String mKey;
+    private Bitmap mBitmap;
 
     /**
      * Upload Constructor
@@ -86,6 +87,7 @@ public class AvatarAsyncTask extends AsyncTask<Void, integer, String> {
             LogUtil.Log(TAG, "返回json :" + o);
             if (!temp.equals("")) {
                 URL src = JSON.parseObject(o.get("obj").toString(), URL.class);
+                mBitmap = BitmapTask.getBitmapFromURL(src.toString());
                 return src.toString();
                 //TODO get error code and show Toast
             } else {
@@ -113,8 +115,8 @@ public class AvatarAsyncTask extends AsyncTask<Void, integer, String> {
     @Override
     protected void onPostExecute(String result) {
         if (mIsDownload) {
-            Bitmap bitmap = BitmapUtil.getBitmapFromURL(result);
-            mAvatar.setImageBitmap(bitmap);
+            if (mBitmap != null)
+                mAvatar.setImageBitmap(mBitmap);
         } else {
             Toast.makeText(mContext, result, Toast.LENGTH_SHORT).show();
         }

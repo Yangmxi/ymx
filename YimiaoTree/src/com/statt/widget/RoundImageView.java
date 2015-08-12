@@ -17,6 +17,7 @@ import android.graphics.drawable.NinePatchDrawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
+import com.statt.util.LogUtil;
 import com.statt.yimiaotree.R;
 
 /**
@@ -24,6 +25,7 @@ import com.statt.yimiaotree.R;
  * 设置颜色在xml布局文件中由自定义属性配置参数指定
  */
 public class RoundImageView extends ImageView {
+    private static final String TAG = "RoundImageView";
     private int mBorderThickness = 0;
     private int defaultColor = 0xFFFFFFFF;
     // 如果只有其中一个有值，则只画一个圆形边框
@@ -65,6 +67,10 @@ public class RoundImageView extends ImageView {
         if (drawable.getClass() == NinePatchDrawable.class)
             return;
         Bitmap b = ((BitmapDrawable) drawable).getBitmap();
+        if (b == null) {
+            LogUtil.Log(TAG, "getBitmap is null");
+            return;
+        }
         Bitmap bitmap = b.copy(Bitmap.Config.ARGB_8888, true);
         defaultWidth = getMeasuredWidth();
         defaultHeight = getMeasuredHeight();

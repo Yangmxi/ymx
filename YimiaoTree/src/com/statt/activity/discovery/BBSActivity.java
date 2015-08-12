@@ -2,21 +2,32 @@
 package com.statt.activity.discovery;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 
+import com.alibaba.fastjson.JSON;
 import com.statt.adapter.PostAdapter;
+import com.statt.json.RequestTask;
+import com.statt.json.model.GeneralPost;
+import com.statt.json.model.TopPost;
 import com.statt.serializable.Parent;
 import com.statt.serializable.Post;
 import com.statt.util.ActionBarUtil;
+import com.statt.util.Address;
 import com.statt.util.DefineUtil;
 import com.statt.widget.XListView;
 import com.statt.widget.XListView.IXListViewListener;
@@ -24,25 +35,18 @@ import com.statt.yimiaotree.R;
 
 public class BBSActivity extends Activity implements IXListViewListener {
 
-    // How many Top post should show to user
-    private static final int TOP_POST_NUM = 3;
+    private static final String TAG = "BBSActivity";
 
-    // Get POST_NUM_TIME posts from service every time 
-    private static final int POST_NUM_TIMES = 5;
-
-    private static final int TOTAL_POSTS = 30;
-
+    private static final String PAGE_INDEX = "pageIndex";
+    private static final String TOP_POST = "topicVo";
+    private static final String GENERAL_POST = "generalPost";
     private XListView mListViewPost;
     private ImageButton mPublishPost;
     private Handler mHandler;
-    private static ArrayList<Post> mListDate;
     private PostAdapter mAdapter;
     private ArrayList<Post> mCurrentDate = new ArrayList<Post>();
-    private static String[] place = {
-            "南京", "上海", "苏州", "成都", "武汉"
-    };
 
-    static Uri[] uri = new Uri[2];
+    private int mPageIndex = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +54,12 @@ public class BBSActivity extends Activity implements IXListViewListener {
         setContentView(R.layout.bbs_layout);
         initView();
         initActionBar();
-        preparePostListDate();
+        //preparePostListDate();
 
+        getTopPostDate(mCurrentDate);
+        getGeneralPostDate(mCurrentDate, mPageIndex);
         mListViewPost.setPullLoadEnable(true);
-        mCurrentDate = getUpdate(0, POST_NUM_TIMES);
+        //mCurrentDate = getUpdate(0, POST_NUM_TIMES);
         mAdapter = new PostAdapter(this, mCurrentDate);
         mListViewPost.setAdapter(mAdapter);
 
@@ -64,129 +70,94 @@ public class BBSActivity extends Activity implements IXListViewListener {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent();
                 intent.setClass(BBSActivity.this, BbsDetailActivity.class);
+                intent.putExtra(DefineUtil.KEY_SELECT_POST, mCurrentDate.get(position - 1).getId());
+                /* This is put post object to bundle and send to BBS detail Activity
                 Bundle bundle = new Bundle();
                 bundle.putSerializable(DefineUtil.KEY_SELECT_POST, mCurrentDate.get(position - 1));
-                intent.putExtras(bundle);
+                intent.putExtras(bundle);*/
                 startActivity(intent);
             }
         });
 
     }
 
-    private static void preparePostListDate() {
-        boolean[] topArray = new boolean[TOTAL_POSTS];
-        String[] titleArray = new String[TOTAL_POSTS];
-        String[] contentArray = new String[TOTAL_POSTS];
-        String[] DateArray = new String[TOTAL_POSTS];
-        int[] clickArray = new int[TOTAL_POSTS];
-        int[] replyArray = new int[TOTAL_POSTS];
-        Parent[] parentArray = new Parent[TOTAL_POSTS];
-        initTop(topArray);
-        initTitle(titleArray);
-        initContent(contentArray);
-        initParent(parentArray);
-        initDate(DateArray);
-        initClick(clickArray);
-        initReply(replyArray);
-        Post post = null;
-        for (int i = 0; i < TOTAL_POSTS; i++) {
-            if (i % 4 == 0) {
-                ArrayList<String> list = new ArrayList<String>();
-                if (i == 8) {
-                    list.add(uri[0].toString());
-                    list.add(uri[1].toString());
-                } else if (i == 12) {
-                    list.add(uri[0].toString());
-                    list.add(uri[1].toString());
-                    list.add(uri[0].toString());
-                } else {
-                    list.add(uri[0].toString());
-                }
-                post = new Post(topArray[i], titleArray[i],
-                        contentArray[i], parentArray[i], DateArray[i],
-                        clickArray[i], replyArray[i], list);
-            } else {
-                post = new Post(topArray[i], titleArray[i],
-                        contentArray[i], parentArray[i], DateArray[i],
-                        clickArray[i], replyArray[i], null);
+    private void getGeneralPostDate(ArrayList<Post> currentDate, int pageIndex) {
+        JSONObject param = new JSONObject();
+        Parent parent;
+        ArrayList<String> imagePath = new ArrayList<String>();
+        try {
+            param.put(PAGE_INDEX, String.valueOf(pageIndex));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        RequestTask rt = new RequestTask(param, Address.GET_ONE_PAGE_POST);
+
+        Map<String, Object> temp = null;
+        try {
+            temp = rt.execute().get();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        Map<String, Object> object = JSON.parseObject(temp.get("obj").toString(), Map.class);
+        List<GeneralPost> generalPost = JSON.parseArray(object.get(GENERAL_POST).toString(), GeneralPost.class);
+        for (int i = 0; i < generalPost.size(); i++) {
+            GeneralPost gen = generalPost.get(i);
+            String id = gen.getId();
+            String title = gen.getTitle();
+            String publishDate = gen.getPublishDate();
+            String replyCount = gen.getReplyCount();
+            String content = gen.getContent();
+            String viewCount = gen.getViewCount();
+            String userName = gen.getUserName();
+            String city = gen.getCity();
+            String userUrl = gen.getUserUrl();
+            imagePath.clear();
+            for (int count = 0; count < gen.getImageVos().size(); count++) {
+                imagePath.add(gen.getImageVos().get(count).getUrl());
             }
-            mListDate.add(post);
+            parent = new Parent(userName, "", city, userUrl);
+
+            Post post = new Post(false, title, content, parent, publishDate,
+                    viewCount, replyCount, imagePath, id);
+            currentDate.add(post);
+            Log.i(TAG, "date size = " + mCurrentDate.size());
         }
 
     }
 
-    private static void initTop(boolean[] topArray) {
-        for (int i = 0; i < TOTAL_POSTS; i++) {
-            if (i < TOP_POST_NUM) {
-                topArray[i] = true;
-            } else {
-                topArray[i] = false;
-            }
+    private void getTopPostDate(ArrayList<Post> currentDate) {
+        RequestTask rt = new RequestTask(null, Address.GET_TOP_POST);
 
+        Map<String, Object> temp = null;
+        try {
+            temp = rt.execute().get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        Map<String, Object> object = JSON.parseObject(temp.get("obj").toString(), Map.class);
+        List<TopPost> topPost = JSON.parseArray(object.get(TOP_POST).toString(), TopPost.class);
+        for (int i = 0; i < topPost.size(); i++) {
+            String id = topPost.get(i).getId();
+            String title = topPost.get(i).getTitle();
+            Log.i(TAG, "title = " + title);
+            Post post = new Post(true, title, id);
+            currentDate.add(post);
+            Log.i(TAG, "date size = " + mCurrentDate.size());
         }
     }
 
-    private static void initTitle(String[] titleArray) {
-        for (int i = 0; i < TOTAL_POSTS; i++) {
-            titleArray[i] = "测试论坛帖子標題_" + i;
-        }
-    }
-
-    private static void initContent(String[] contentArray) {
-        for (int i = 0; i < TOTAL_POSTS; i++) {
-            contentArray[i] = "测试内容发帖_" + i;
-        }
-    }
-
-    private static void initParent(Parent[] parentArray) {
-
-        for (int i = 0; i < TOTAL_POSTS; i++) {
-            String name = "家长_" + i;
-            String phoneNum = "186****" + (10 + (int) Math.random() * 89);
-            parentArray[i] = new Parent(name, phoneNum, place[(int) (Math.random() * 4)], uri[i % 2].toString());
-        }
-    }
-
-    private static void initDate(String[] dateArray) {
-        for (int i = 0; i < TOTAL_POSTS; i++) {
-            dateArray[i] = "2015.08.04 15 : " + i * 2;
-        }
-    }
-
-    private static void initClick(int[] clickArray) {
-        for (int i = 0; i < TOTAL_POSTS; i++) {
-            clickArray[i] = (int) (Math.random() * 10000);
-        }
-    }
-
-    private static void initReply(int[] replyArray) {
-        for (int i = 0; i < TOTAL_POSTS; i++) {
-            replyArray[i] = (int) (Math.random() * 100);
-        }
-    }
-
-    private ArrayList<Post> getUpdate(int index, int length) {
+    private ArrayList<Post> getUpdate() {
         ArrayList<Post> list = new ArrayList<Post>();
-        for (int i = index; i < length; i++) {
-            list.add(mListDate.get(i));
-        }
+        mPageIndex = 1;
+        getTopPostDate(list);
+        getGeneralPostDate(list, mPageIndex);
         return list;
-    }
-
-    private void loadMoreDate(int length) {
-        final int currentSize = mCurrentDate.size();
-        int size = 0;
-        if (currentSize >= mListDate.size()) {
-            return;
-        }
-        if (currentSize + length > mListDate.size()) {
-            size = mListDate.size();
-        } else {
-            size = currentSize + length;
-        }
-        for (int i = currentSize; i < size; i++) {
-            mCurrentDate.add(mListDate.get(i));
-        }
     }
 
     private void initActionBar() {
@@ -200,10 +171,7 @@ public class BBSActivity extends Activity implements IXListViewListener {
 
     private void initView() {
         mListViewPost = (XListView) findViewById(R.id.post_list);
-        mListDate = new ArrayList<Post>();
         mHandler = new Handler();
-        uri[0] = Uri.parse("android.resource://" + getPackageName() + "/" + R.drawable.icon_child_kimi);
-        uri[1] = Uri.parse("android.resource://" + getPackageName() + "/" + R.drawable.icon_parent_avatar);
     }
 
     OnClickListener publishPostListener = new View.OnClickListener() {
@@ -221,10 +189,8 @@ public class BBSActivity extends Activity implements IXListViewListener {
             @Override
             public void run() {
                 mCurrentDate = new ArrayList<Post>();
-                mCurrentDate = getUpdate(0, 3 + (int) (Math.random() * 6));
+                mCurrentDate = getUpdate();
                 mAdapter = new PostAdapter(BBSActivity.this, mCurrentDate);
-                //mAdapter.notifyDataSetChanged();
-                //mAdapter = new ArrayAdapter<String>(XListViewActivity.this, R.layout.list_item, items);
                 mListViewPost.setAdapter(mAdapter);
                 onLoad();
             }
@@ -236,7 +202,8 @@ public class BBSActivity extends Activity implements IXListViewListener {
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                loadMoreDate(POST_NUM_TIMES);
+                mPageIndex++;
+                getGeneralPostDate(mCurrentDate, mPageIndex);
                 mAdapter.notifyDataSetChanged();
                 onLoad();
             }

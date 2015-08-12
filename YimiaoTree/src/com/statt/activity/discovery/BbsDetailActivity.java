@@ -2,21 +2,33 @@
 package com.statt.activity.discovery;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 
+import com.alibaba.fastjson.JSON;
+import com.statt.adapter.PostAdapter;
 import com.statt.adapter.PostDetailAdapter;
+import com.statt.json.RequestTask;
+import com.statt.json.model.PostDetail;
+import com.statt.json.model.ReplyPost;
 import com.statt.serializable.Parent;
 import com.statt.serializable.Post;
 import com.statt.serializable.Reply;
 import com.statt.util.ActionBarUtil;
+import com.statt.util.Address;
 import com.statt.util.DefineUtil;
+import com.statt.util.LogUtil;
 import com.statt.widget.XListView;
 import com.statt.widget.XListView.IXListViewListener;
 import com.statt.yimiaotree.R;
@@ -24,15 +36,14 @@ import com.statt.yimiaotree.R;
 public class BbsDetailActivity extends Activity implements IXListViewListener {
 
     private static final String TAG = "BbsDetailActivity";
-    private static final int TOTAL_POSTS = 10;
+    private static final String TOPIC_ID = "topicId";
+    private static final String LOGIN_ID = "getFromSharePreference";
     private XListView mPostDetail;
     private PostDetailAdapter mAdapter;
     private Post mPost;
     private ArrayList<Reply> mListReply;
     private Handler mHandler;
-    private static String[] place = {
-            "南京", "上海", "苏州", "成都", "武汉"
-    };
+    private String mId;
 
     static Uri[] uri = new Uri[2];
 
@@ -44,57 +55,71 @@ public class BbsDetailActivity extends Activity implements IXListViewListener {
         initViews();
         initActionBar();
 
-        prepareDate();
+        getPostDetail();
 
         mPostDetail.setPullLoadEnable(true);
-        mAdapter = new PostDetailAdapter(this, mPost, mListReply);
+        mAdapter = new PostDetailAdapter(this, mPost, mListReply, LOGIN_ID);
         mPostDetail.setAdapter(mAdapter);
 
         mPostDetail.setXListViewListener(this);
     }
 
-    private void getIntentExtras() {
-        Intent intent = getIntent();
-        mPost = (Post) intent.getSerializableExtra(DefineUtil.KEY_SELECT_POST);
-        if (mPost == null) {
-            Log.e(TAG, "Get Post from intent bundle is null");
-        }
-    }
-
-    private void prepareDate() {
+    private void getPostDetail() {
+        JSONObject param = new JSONObject();
+        Parent parent;
+        boolean isTop;
         Reply reply;
-        Parent[] parent = new Parent[TOTAL_POSTS];
-        String[] date = new String[TOTAL_POSTS];
-        String[] content = new String[TOTAL_POSTS];
+        ArrayList<String> imagePath = new ArrayList<String>();
+        try {
+            param.put(TOPIC_ID, String.valueOf(mId));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        RequestTask rt = new RequestTask(param, Address.GET_POST_DETAIL);
 
-        initContent(content);
-        initDate(date);
-        initParent(parent);
-
-        for (int i = 0; i < TOTAL_POSTS; i++) {
-            reply = new Reply(parent[i], date[i], content[i]);
+        Map<String, Object> temp = null;
+        try {
+            temp = rt.execute().get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        PostDetail object = JSON.parseObject(temp.get("obj").toString(), PostDetail.class);
+        String id = object.getId();
+        String title = object.getTitle();
+        String publishDate = object.getPublishDate();
+        String replyCount = object.getReplyCount();
+        String content = object.getContent();
+        String viewCount = object.getViewCount();
+        String userName = object.getUserName();
+        String city = object.getCity();
+        String userUrl = object.getUserUrl();
+        String state = object.getState();
+        if (state.equals("1")) {
+            isTop = true;
+        } else {
+            isTop = false;
+        }
+        for (int count = 0; count < object.getImageVos().size(); count++) {
+            imagePath.add(object.getImageVos().get(count).getUrl());
+        }
+        parent = new Parent(userName, "", city, userUrl);
+        mPost = new Post(isTop, title, content, parent, publishDate, viewCount, replyCount, imagePath, id);
+        List<ReplyPost> list = object.getReplyVos();
+        for (int i = 0; i < list.size(); i++) {
+            ReplyPost replyPost = list.get(i);
+            parent = new Parent(replyPost.getUserName(), replyPost.getLoc(), replyPost.getUrl());
+            reply = new Reply(parent, replyPost.getReDate(), replyPost.getContent());
             mListReply.add(reply);
         }
     }
 
-    private static void initContent(String[] contentArray) {
-        for (int i = 0; i < TOTAL_POSTS; i++) {
-            contentArray[i] = "测试内容发帖_这个帖子我喜欢_" + i;
-        }
-    }
-
-    private static void initDate(String[] dateArray) {
-        for (int i = 0; i < TOTAL_POSTS; i++) {
-            dateArray[i] = "2015.08.04 15 : " + (10 + i * 2);
-        }
-    }
-
-    private static void initParent(Parent[] parentArray) {
-
-        for (int i = 0; i < TOTAL_POSTS; i++) {
-            String name = "回帖家长_" + i;
-            String phoneNum = "186****" + (10 + (int) Math.random() * 89);
-            parentArray[i] = new Parent(name, phoneNum, place[(int) (Math.random() * 4)], uri[i % 2].toString());
+    private void getIntentExtras() {
+        Intent intent = getIntent();
+        mId = intent.getStringExtra(DefineUtil.KEY_SELECT_POST);
+        if (mId == null) {
+            LogUtil.Log(TAG, "Get Post id from intent bundle is null");
         }
     }
 
@@ -116,12 +141,10 @@ public class BbsDetailActivity extends Activity implements IXListViewListener {
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                //mCurrentDate = new ArrayList<Post>();
-                //mCurrentDate = getUpdate(0, 3 + (int) (Math.random() * 6));
-                //mAdapter = new PostAdapter(BBSActivity.this, mCurrentDate);
-                //mAdapter.notifyDataSetChanged();
-                //mAdapter = new ArrayAdapter<String>(XListViewActivity.this, R.layout.list_item, items);
-                //mListViewPost.setAdapter(mAdapter);
+                mListReply = new ArrayList<Reply>();
+                getPostDetail();
+                mAdapter = new PostDetailAdapter(BbsDetailActivity.this, mPost, mListReply, LOGIN_ID);
+                mPostDetail.setAdapter(mAdapter);
                 onLoad();
             }
         }, 2000);
@@ -132,6 +155,7 @@ public class BbsDetailActivity extends Activity implements IXListViewListener {
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
+                //TODO get more detail post and update list
                 mAdapter.notifyDataSetChanged();
                 onLoad();
             }

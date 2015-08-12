@@ -22,10 +22,8 @@ public class Reply implements Serializable {
     }
 
     public Reply(Parent mParent, int mFloor, String mDate, String mContent) {
-        this.mParent = mParent;
+        this(mParent, mDate, mContent);
         this.mFloor = mFloor;
-        this.mDate = mDate;
-        this.mContent = mContent;
     }
 
     public Parent getParent() {

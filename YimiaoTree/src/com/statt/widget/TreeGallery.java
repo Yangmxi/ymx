@@ -3,11 +3,7 @@ package com.statt.widget;
 
 import java.util.ArrayList;
 
-import com.statt.util.BitmapUtil;
-import com.statt.yimiaotree.R;
-
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.util.AttributeSet;
@@ -16,6 +12,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.statt.yimiaotree.R;
 
 public class TreeGallery extends FrameLayout {
 

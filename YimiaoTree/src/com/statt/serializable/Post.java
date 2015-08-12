@@ -4,8 +4,6 @@ package com.statt.serializable;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import android.net.Uri;
-
 public class Post implements Serializable {
 
     /**
@@ -18,13 +16,14 @@ public class Post implements Serializable {
     private String mContent;
     private Parent mParent;
     private String mDate;
-    private int mClicksCount;
-    private int mReplyCount;
+    private String mClicksCount;
+    private String mReplyCount;
+    private String mId;
     private ArrayList<String> mImagePath;
 
     public Post(boolean mIsTop, String mTitle, String mContent,
-            Parent mParent, String mDate, int mClicksCount,
-            int mReplyCount, ArrayList<String> mImagePath) {
+            Parent mParent, String mDate, String mClicksCount,
+            String mReplyCount, ArrayList<String> mImagePath, String id) {
         this.mIsTop = mIsTop;
         this.mTitle = mTitle;
         this.mContent = mContent;
@@ -33,6 +32,21 @@ public class Post implements Serializable {
         this.mClicksCount = mClicksCount;
         this.mReplyCount = mReplyCount;
         this.mImagePath = mImagePath;
+        this.mId = id;
+    }
+
+    public Post(boolean isTop, String title, String id) {
+        this.mIsTop = isTop;
+        this.mTitle = title;
+        this.mId = id;
+    }
+
+    public String getId() {
+        return mId;
+    }
+
+    public void setId(String id) {
+        this.mId = id;
     }
 
     public String getDate() {
@@ -43,19 +57,19 @@ public class Post implements Serializable {
         this.mDate = mDate;
     }
 
-    public int getClicksCount() {
+    public String getClicksCount() {
         return mClicksCount;
     }
 
-    public void setClicksCount(int mClicksCount) {
+    public void setClicksCount(String mClicksCount) {
         this.mClicksCount = mClicksCount;
     }
 
-    public int getReplyCount() {
+    public String getReplyCount() {
         return mReplyCount;
     }
 
-    public void setReplyCount(int mReplyCount) {
+    public void setReplyCount(String mReplyCount) {
         this.mReplyCount = mReplyCount;
     }
 

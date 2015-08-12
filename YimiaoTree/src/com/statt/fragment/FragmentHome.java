@@ -100,7 +100,7 @@ public class FragmentHome extends Fragment {
         ActionBar ab = getActivity().getActionBar();
         ab.setCustomView(R.layout.custom_action_bar_home);
         ab.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        //TODO If avatar pictrue in cache of sdcard, setting it.
+        //TODO If avatar picture in cache of sdcard, setting it.
         //     if not, setting to the default avatar
     }
 

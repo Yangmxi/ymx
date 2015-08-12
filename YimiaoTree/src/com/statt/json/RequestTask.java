@@ -19,7 +19,7 @@ public class RequestTask extends AsyncTask<Void, Integer, Map<String, Object>> {
     private String mAddress;
     private JSONObject mParam;
 
-    public RequestTask(String mKey, JSONObject mParam, String address) {
+    public RequestTask(JSONObject mParam, String address) {
         super();
         this.mParam = mParam;
         this.mAddress = address;
@@ -27,7 +27,13 @@ public class RequestTask extends AsyncTask<Void, Integer, Map<String, Object>> {
 
     @Override
     protected Map<String, Object> doInBackground(Void... params) {
-        String temp = URLClientUtil.AccessWebUtil(JsonStrUtil.jsonToStr(mParam.toString()), mAddress);
+        String param;
+        if (mParam == null) {
+            param = "";
+        } else {
+            param = JsonStrUtil.jsonToStr(mParam.toString());
+        }
+        String temp = URLClientUtil.AccessWebUtil(param, mAddress);
         Map<String, Object> map = JSON.parseObject(temp.toString(), Map.class);
         LogUtil.Log(TAG, "Return json :" + map);
         return map;

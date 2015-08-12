@@ -47,6 +47,18 @@
                     android:text="2015.08.03 19:13"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/font_size_post_date" />
+
+                <TextView
+                    android:id="@+id/post_delete"
+                    android:layout_width="@dimen/dimen_post_click_width"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/post_date"
+                    android:gravity="center_horizontal"
+                    android:text="@string/delete"
+                    android:textColor="@color/vac_text_color"
+                    android:textSize="@dimen/font_size_post_click_reply"
+                    android:visibility="gone" />
             </RelativeLayout>
 
             <TextView

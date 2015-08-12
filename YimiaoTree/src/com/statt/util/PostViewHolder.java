@@ -2,7 +2,9 @@
 package com.statt.util;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.util.Log;
 import android.view.View;
@@ -60,23 +62,44 @@ public class PostViewHolder {
             return;
         }
         Parent parent = post.getParent();
-        if (parent == null) {
-            Log.e(TAG, "parent is null");
+        if (parent != null) {
+            name.setText(parent.getName());
+            place.setText(parent.getPlace());
+            Log.e(TAG, "Avatar URL = " + Uri.parse(parent.getAvatar()));
+            Bitmap bm = null;
+            try {
+                bm = new BitmapTask().execute(parent.getAvatar()).get();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            avatar.setImageBitmap(bm);
+        } else {
+            LogUtil.Log(TAG, "parent is null");
         }
-        if (name == null) {
-            Log.e(TAG, "viewHolder.name is null");
-        }
-        name.setText(parent.getName());
-        place.setText(parent.getPlace());
+
         date.setText(post.getDate());
-        clicks.setText(post.getClicksCount() + "");
-        reply.setText(post.getReplyCount() + "");
-        avatar.setImageURI(Uri.parse(parent.getAvatar()));
+        clicks.setText(post.getClicksCount());
+        reply.setText(post.getReplyCount());
+
         ArrayList<String> list = post.getImagePath();
         if (list != null) {
-            for (int i = 0; i < list.size(); i++) {
+            for (int i = 0; i < mListImage.size() && i < list.size(); i++) {
                 ImageView image = mListImage.get(i);
-                image.setImageURI(Uri.parse(list.get(i)));
+                Bitmap bm = null;
+                try {
+                    bm = new BitmapTask().execute(list.get(i)).get();
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                image.setImageBitmap(bm);
                 image.setVisibility(View.VISIBLE);
             }
         }
