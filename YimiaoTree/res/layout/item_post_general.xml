@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_parent_avater" >
 
-        <com.statt.widget.RoundImageView
+        <ImageView
             android:id="@+id/post_avatar"
             android:layout_width="@dimen/dimen_parent_avater"
             android:layout_height="@dimen/dimen_parent_avater"

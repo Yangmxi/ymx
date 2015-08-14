@@ -8,7 +8,7 @@ package com.statt.util;
  */
 
 public class Address {
-    public static final String SERVICE = "http://192.168.1.108:8088";
+    public static final String SERVICE = "http://192.168.1.130:8088";
     public static final String SIGN = "?sign=";
     // 首次打开APP自动注册
     public static final String REGISTER = SERVICE + "/Vaccine/api/userControllerApi/register" + SIGN;
@@ -51,9 +51,9 @@ public class Address {
     // 获得一页的帖子
     public static final String GET_ONE_PAGE_POST = SERVICE + "/Vaccine/api/topicControllerApi/selectAllTopic" + SIGN;
     // 发布新帖:只有文字内容
-    public static final String NEW_POST_O_IMAGE = SERVICE + "/Vaccine/api/topicControllerApi/addToicOne" + SIGN;
+    public static final String NEW_POST_X_IMAGE = SERVICE + "/Vaccine/api/topicControllerApi/addToicOne" + SIGN;
     // 发布新帖:上传图片,路径 BBS/帖子Id/转码后图片名称.jpg
-    public static final String NEW_POST_X_IMAGE = SERVICE + "/Vaccine/api/topicControllerApi/addToicTwo" + SIGN;
+    public static final String NEW_POST_O_IMAGE = SERVICE + "/Vaccine/api/topicControllerApi/addToicTwo" + SIGN;
     // 删除帖子
     public static final String DEL_POST = SERVICE + "/Vaccine/api/topicControllerApi/delTopic" + SIGN;
     // 查询我的帖子列表

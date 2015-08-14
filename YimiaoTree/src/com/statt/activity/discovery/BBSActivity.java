@@ -115,7 +115,7 @@ public class BBSActivity extends Activity implements IXListViewListener {
             String userName = gen.getUserName();
             String city = gen.getCity();
             String userUrl = gen.getUserUrl();
-            imagePath.clear();
+            imagePath = new ArrayList<String>();
             for (int count = 0; count < gen.getImageVos().size(); count++) {
                 imagePath.add(gen.getImageVos().get(count).getUrl());
             }

@@ -2,9 +2,12 @@
 package com.statt.adapter;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +18,7 @@ import android.widget.TextView;
 import com.statt.serializable.Parent;
 import com.statt.serializable.Post;
 import com.statt.serializable.Reply;
+import com.statt.util.BitmapTask;
 import com.statt.util.PostViewHolder;
 import com.statt.yimiaotree.R;
 
@@ -106,8 +110,10 @@ public class PostDetailAdapter extends BaseAdapter {
 
         @Override
         public void setDateToItem(Post post, boolean isPostDetail) {
+            Log.e("ymx","****************in set date to item");
             super.setDateToItem(post, isPostDetail);
             content.setText(post.getContent());
+            Log.e("ymx","****************out set date to item");
         }
 
         public void setDateToItem(Reply reply, boolean isPostDetail) {
@@ -116,7 +122,9 @@ public class PostDetailAdapter extends BaseAdapter {
             name.setText(parent.getName());
             place.setText(parent.getPlace());
             date.setText(reply.getDate());
-            avatar.setImageURI(Uri.parse(parent.getAvatar()));
+            Log.e("ymx","****************in set date to item custom");
+            //setImageFromURL(avatar, parent.getAvatar());
+            Log.e("ymx","****************out set date to item custom");
         }
 
         @Override

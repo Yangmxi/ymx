@@ -57,7 +57,7 @@ public class BbsDetailActivity extends Activity implements IXListViewListener {
 
         getPostDetail();
 
-        mPostDetail.setPullLoadEnable(true);
+        mPostDetail.setPullLoadEnable(false);
         mAdapter = new PostDetailAdapter(this, mPost, mListReply, LOGIN_ID);
         mPostDetail.setAdapter(mAdapter);
 

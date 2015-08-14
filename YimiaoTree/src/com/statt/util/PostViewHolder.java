@@ -31,7 +31,7 @@ public class PostViewHolder {
     public TextView clicks;
     public TextView reply;
 
-    public RoundImageView avatar;
+    public ImageView avatar;
     public ArrayList<ImageView> mListImage = new ArrayList<ImageView>();
 
     /**
@@ -66,17 +66,7 @@ public class PostViewHolder {
             name.setText(parent.getName());
             place.setText(parent.getPlace());
             Log.e(TAG, "Avatar URL = " + Uri.parse(parent.getAvatar()));
-            Bitmap bm = null;
-            try {
-                bm = new BitmapTask().execute(parent.getAvatar()).get();
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            avatar.setImageBitmap(bm);
+            setImageFromURL(avatar, parent.getAvatar());
         } else {
             LogUtil.Log(TAG, "parent is null");
         }
@@ -89,17 +79,7 @@ public class PostViewHolder {
         if (list != null) {
             for (int i = 0; i < mListImage.size() && i < list.size(); i++) {
                 ImageView image = mListImage.get(i);
-                Bitmap bm = null;
-                try {
-                    bm = new BitmapTask().execute(list.get(i)).get();
-                } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-                image.setImageBitmap(bm);
+                setImageFromURL(image, list.get(i));
                 image.setVisibility(View.VISIBLE);
             }
         }
@@ -114,10 +94,22 @@ public class PostViewHolder {
             date = (TextView) view.findViewById(R.id.post_date);
             clicks = (TextView) view.findViewById(R.id.post_click);
             reply = (TextView) view.findViewById(R.id.post_reply);
-            avatar = (RoundImageView) view.findViewById(R.id.post_avatar);
+            avatar = (ImageView) view.findViewById(R.id.post_avatar);
             mListImage.add((ImageView) view.findViewById(R.id.post_image_1));
             mListImage.add((ImageView) view.findViewById(R.id.post_image_2));
             mListImage.add((ImageView) view.findViewById(R.id.post_image_3));
         }
+    }
+
+    protected void setImageFromURL(ImageView image, String url) {
+        Bitmap bm = null;
+        try {
+            bm = new BitmapTask().execute(url).get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        image.setImageBitmap(bm);
     }
 }

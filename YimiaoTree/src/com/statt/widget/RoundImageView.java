@@ -55,6 +55,7 @@ public class RoundImageView extends ImageView {
         mBorderInsideColor = a.getColor(R.styleable.roundedimageview_border_inside_color, defaultColor);
     }
 
+    Bitmap roundBitmap;
     @Override
     protected void onDraw(Canvas canvas) {
         Drawable drawable = getDrawable();
@@ -93,7 +94,7 @@ public class RoundImageView extends ImageView {
         } else {// 没有边框
             radius = (defaultWidth < defaultHeight ? defaultWidth : defaultHeight) / 2;
         }
-        Bitmap roundBitmap = getCroppedRoundBitmap(bitmap, radius);
+        roundBitmap = getCroppedRoundBitmap(bitmap, radius);
         canvas.drawBitmap(roundBitmap, defaultWidth / 2 - radius, defaultHeight / 2 - radius, null);
     }
 
