@@ -14,12 +14,11 @@ import android.widget.RelativeLayout;
 import com.statt.activity.MainActivity;
 import com.statt.yimiaotree.R;
 
-public class Branch extends FrameLayout {
+public class Branch extends RelativeLayout {
 
     public static final int DIRECTION_LEFT = 0;
     public static final int DIRECTION_MID = 1;
     public static final int DIRECTION_RIGHT = 2;
-    private RelativeLayout mBranch;
     private TreeGallery mTreeGallery;
     private int mBranchTheme;
     private OnClickListener listener;
@@ -38,13 +37,12 @@ public class Branch extends FrameLayout {
     }
 
     private void init(final Context context) {
-        LayoutInflater inflate = LayoutInflater.from(context);
-        mBranch = (RelativeLayout) inflate.inflate(R.layout.branch_layout, null);
-        mTreeGallery = (TreeGallery) mBranch.findViewById(R.id.branch_photo_frame);
+        View branch = View.inflate(context, R.layout.branch_layout, this);
+        mTreeGallery = (TreeGallery) branch.findViewById(R.id.branch_photo_frame);
         if (listener != null) {
             mTreeGallery.setOnClickListener(listener);
         }
-        addView(mBranch);
+        //addView(branch);
     }
 
     public TreeGallery getTreeGallery() {

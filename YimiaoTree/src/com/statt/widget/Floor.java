@@ -14,11 +14,10 @@ import android.widget.RelativeLayout;
 import com.statt.util.DefineUtil;
 import com.statt.yimiaotree.R;
 
-public class Floor extends FrameLayout {
+public class Floor extends RelativeLayout {
 
     private static final String TAG = "Floor";
 
-    private RelativeLayout mFloor;
     private Branch mBranchLeft, mBranchRight;
     private ImageView mTrunk;
     private int mTypeBranch = DefineUtil.TYPE_BRANCH_LARGER;
@@ -55,15 +54,16 @@ public class Floor extends FrameLayout {
      */
     private void init(Context context) {
         LayoutInflater inflate = LayoutInflater.from(context);
+        View floor = null;
         if (mTypeBranch == DefineUtil.TYPE_BRANCH_SMALL) {
-            mFloor = (RelativeLayout) inflate.inflate(R.layout.branch_left_right_layout_small, null);
+            floor = inflate.inflate(R.layout.branch_left_right_layout_small, this);
         } else if (mTypeBranch == DefineUtil.TYPE_BRANCH_LARGER) {
-            mFloor = (RelativeLayout) inflate.inflate(R.layout.branch_left_right_layout_larger, null);
+            floor = inflate.inflate(R.layout.branch_left_right_layout_larger, this);
         }
 
-        mTrunk = (ImageView) mFloor.findViewById(R.id.trunk);
-        mBranchLeft = (Branch) mFloor.findViewById(R.id.branch_left);
-        mBranchRight = (Branch) mFloor.findViewById(R.id.branch_right);
+        mTrunk = (ImageView) floor.findViewById(R.id.trunk);
+        mBranchLeft = (Branch) floor.findViewById(R.id.branch_left);
+        mBranchRight = (Branch) floor.findViewById(R.id.branch_right);
 
         if (mTypeBranch == DefineUtil.TYPE_BRANCH_SMALL) {
             setMarginAndBkg(mBranchLeft, mMarginStartSmallLeftBranch,
@@ -80,7 +80,6 @@ public class Floor extends FrameLayout {
                     mMarginTopLargerRightBranch, R.drawable.branch_right_larger);
 
         }
-        addView(mFloor);
     }
 
     /**

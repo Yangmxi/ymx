@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -15,7 +16,7 @@ import android.widget.TextView;
 
 import com.statt.yimiaotree.R;
 
-public class TreeGallery extends FrameLayout {
+public class TreeGallery extends RelativeLayout {
 
     private int mGalleryTheme;
     private ArrayList<Uri> mListPhotos;
@@ -23,7 +24,6 @@ public class TreeGallery extends FrameLayout {
     private String mGalleryName;
     private int mCoverPicIndex;
 
-    private RelativeLayout mTreeGallery;
     private ImageView mCoverPic;
     private TextView mName;
     private TextView mTime;
@@ -43,11 +43,10 @@ public class TreeGallery extends FrameLayout {
 
     private void init(Context context) {
         LayoutInflater inflate = LayoutInflater.from(context);
-        mTreeGallery = (RelativeLayout) inflate.inflate(R.layout.tree_gallery_layout, null);
-        mName = (TextView) mTreeGallery.findViewById(R.id.name);
-        mTime = (TextView) mTreeGallery.findViewById(R.id.create_time);
-        mCoverPic = (ImageView) mTreeGallery.findViewById(R.id.cover_pictures);
-        addView(mTreeGallery);
+        View treeGallery = inflate.inflate(R.layout.tree_gallery_layout, this);
+        mName = (TextView) treeGallery.findViewById(R.id.name);
+        mTime = (TextView) treeGallery.findViewById(R.id.create_time);
+        mCoverPic = (ImageView) treeGallery.findViewById(R.id.cover_pictures);
     }
 
     public ImageView getCoverPic() {
